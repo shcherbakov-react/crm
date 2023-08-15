@@ -4,6 +4,7 @@
     background: var(--bg-color);
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 10px 20px;
     margin-left: auto;
 }
@@ -22,6 +23,37 @@
     text-align: center;
 }
 
+.title {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.infoItems {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+}
+
+.widgets {
+    display: flex;
+    gap: 32px;
+}
+
+.datatime {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
 .date {
-    font-size: 14px;
+    font-size: 16px;
 }

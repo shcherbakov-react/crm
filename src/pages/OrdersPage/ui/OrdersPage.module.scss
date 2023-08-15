@@ -1,0 +1,33 @@
+.cell {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--secondary-color);
+    text-align: start;
+    padding: 11px 12px;
+}
+
+.table {
+    border-spacing: unset;
+    border-left: 1px solid #EAECF0;
+    border-right: 1px solid #EAECF0;
+    width: 100%;
+}
+
+.table>:not(caption)>*>* {
+    border-bottom: 1px solid #EAECF0;
+}
+
+.header th {
+    background-color: #F9FAFB;
+    font-size: 12px;
+}
+
+.outletTitle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}

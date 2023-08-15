@@ -1,0 +1,26 @@
+.TableAction {
+    display: grid;
+    grid-template-columns: max-content 1fr  max-content;
+    width: 100%;
+    padding: 20px 12px;
+    gap: 50px;
+    margin-top: 40px;
+}
+.actionGroup {
+    display: flex;
+    justify-content: space-between;
+    width: max-content;
+    gap: 8px;
+    align-items: center;
+}
+
+.actionGroup:last-child {
+    gap: 20px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}

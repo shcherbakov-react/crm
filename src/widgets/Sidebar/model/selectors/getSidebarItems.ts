@@ -1,6 +1,5 @@
 import ClientsIcon from 'shared/assets/icons/sidebar/clients.svg';
 import OrderIcon from 'shared/assets/icons/sidebar/orders.svg';
-import CallsIcon from 'shared/assets/icons/sidebar/phone.svg';
 import MontagesIcon from 'shared/assets/icons/sidebar/montages.svg';
 import FinanceIcon from 'shared/assets/icons/sidebar/dollar.svg';
 import UserIcon from 'shared/assets/icons/sidebar/user.svg';
@@ -10,34 +9,50 @@ import { SidebarItemType } from '../types/sidebar';
 export const useSidebarItems = () => {
     const sidebarItemsList: SidebarItemType[] = [
         {
-            path: '/clients',
-            Icon: ClientsIcon,
-            text: 'Клиенты',
-        },
-        {
             path: '/orders',
             Icon: OrderIcon,
             text: 'Заказы',
         },
         {
-            path: '/calls',
-            Icon: CallsIcon,
-            text: 'Звонки',
+            path: '/delivery',
+            Icon: ClientsIcon,
+            text: 'Доставка',
         },
+
         {
-            path: '/montages',
+            path: '/schedule',
             Icon: MontagesIcon,
-            text: 'Монтажи',
+            text: 'Расписание смен',
         },
         {
-            path: '/finance',
+            path: '/storage',
             Icon: FinanceIcon,
-            text: 'Финансы',
+            text: 'Склад',
         },
         {
-            path: '/users',
+            path: '/accounting',
+            Icon: MontagesIcon,
+            text: 'Бухгалтерия',
+        },
+        {
+            path: '/marketing',
             Icon: UserIcon,
-            text: 'Пользователи',
+            text: 'Маркетинг',
+        },
+        {
+            path: '/report',
+            Icon: UserIcon,
+            text: 'Отчеты и аналитика',
+        },
+        {
+            path: '/report',
+            Icon: UserIcon,
+            text: 'Справочники',
+        },
+        {
+            path: '/administration',
+            Icon: UserIcon,
+            text: 'Администрирование',
         },
     ];
 
