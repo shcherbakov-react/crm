@@ -53,6 +53,25 @@ const defaultData: Person[] = [
         sum: 2253,
         comment: 'Когда приедите, позвоните, я выйду',
     },
+    {
+        id: 52356,
+        outlet: {
+            outletId: 2,
+            outletTitle: 'Сушитайм',
+            outletTitleColor: '#A259FF',
+        },
+        statusId: 3,
+        date: 1692008533,
+        deliveryTime: 1795119533,
+        paymentType: 0,
+        initials: 'Павел Андреевич',
+        phone: '+79987352563',
+        address: 'Михайловск, Гоголя 16, кв. 52',
+        district: 'Центр',
+        person: 1,
+        sum: 2253,
+        comment: 'Когда приедите, позвоните, я выйду',
+    },
 ]
 
 const columnHelper = createColumnHelper<Person>()

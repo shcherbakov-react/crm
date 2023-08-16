@@ -1,12 +1,12 @@
 import cls from './Map.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames';
 import React, { useState } from 'react';
-import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
+import { Circle, MapContainer, Marker, Polygon, Polyline, Popup, Rectangle, TileLayer, useMapEvents } from 'react-leaflet';
 import { iconPerson } from './MapIcon'
-// import "leaflet-control-geocoder/dist/Control.Geocoder.css";
+
 import "leaflet-control-geocoder/dist/Control.Geocoder.js";
-import L from "leaflet";
 import { SearchBox } from 'pages/OrdersPage/ui/Map/SearchBox';
+import NewLayers from 'pages/OrdersPage/ui/Map/NewLayers';
 
 interface MapProps {
     className?: string;
@@ -31,11 +31,24 @@ export const Map = (props: MapProps) => {
     } = props;
 
     const [collapse, setCollapse] = useState(false);
+    const [newZone, setNewZone] = useState<number[]>([])
+    const polygon: [number, number][] = [
+        [45.019456, 41.933020],
+        [45.023698, 41.902784],
+        [45.024823, 41.900284],
+        [45.023376, 41.897328],
+        [45.003174, 41.890653],
+        [45.000264, 41.910393],
+        [44.997218, 41.909686],
+        [44.993269, 41.923269],
+    ];
 
     setTimeout(function () {
         window.dispatchEvent(new Event("resize"));
     }, 500);
 
+    // @ts-ignore
+    // @ts-ignore
     return (
         <div className={classNames(cls.Map, { [cls.collapse]: collapse }, [className])}>
             <div className={classNames(cls.btn, { [cls.collapse]: collapse })} onClick={() => setCollapse(!collapse)}>
@@ -49,18 +62,20 @@ export const Map = (props: MapProps) => {
                           strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
             </div>
-            <MapContainer className={cls.mapContainer} center={[45.015677, 41.903875]} zoom={16}>
-                <SearchBox />
+            <MapContainer bounds={polygon} className={cls.mapContainer} center={[45.015677, 41.903875]} zoom={14}>
+                {/*<SearchBox />*/}
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
                 <Marker position={[45.015677, 41.903875]}>
-                <Popup>
-                    A pretty CSS3 popup. <br /> Easily customizable.
-                </Popup>
-            </Marker>
-
+                </Marker>
+                        <Polyline  positions={[newZone] as any} pathOptions={{ fillColor: 'red' }} />
+                {/*{newZone && newZone.map((item) => (*/}
+                {/*    )*/}
+                {/*)}*/}
+                <Polygon pathOptions={{ fillColor: 'purple' }} positions={polygon} />
+                <NewLayers newZone={newZone} setNewZone={setNewZone} />
             </MapContainer>
         </div>
     )
