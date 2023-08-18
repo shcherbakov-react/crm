@@ -6,6 +6,12 @@
     width: 100%;
 }
 
+.popupTitle {
+    font-size: 12px;
+    font-weight: 600;
+    font-family: Inter;
+}
+
 .btn {
     position: absolute;
     left: 4px;
@@ -21,13 +27,16 @@
     background-color: #fff;
     cursor: pointer;
 }
+
 .btn.btnCollapse svg{
     transform: rotate(180deg);
 }
+
 .mapContainer {
     height: 550px;
     transition: height .5s;
 }
+
 .collapse .mapContainer{
     height: 0;
     transition: height .5s;

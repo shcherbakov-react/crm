@@ -50,9 +50,16 @@ export const useSidebarItems = () => {
             text: 'Справочники',
         },
         {
-            path: '/administration',
+            // path: '/administration',
             Icon: UserIcon,
             text: 'Администрирование',
+            nested: [
+                {
+                    path: '/account',
+                    text: 'Аккаунт',
+                    Icon: UserIcon,
+                },
+            ]
         },
     ];
 

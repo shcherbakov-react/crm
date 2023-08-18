@@ -1,0 +1,37 @@
+.leaflet-container {
+    width: 100%;
+    height: 700px;
+}
+
+.leaflet-touch .leaflet-control-attribution {
+    display: none;
+}
+
+.leaflet-top {
+    bottom: 0;
+    top: unset;
+}
+
+.leaflet-left {
+    right: 0;
+    left: unset;
+}
+
+.leaflet-marker-icon {
+    background: none;
+    border: none;
+}
+
+.leaflet-popup-close-button {
+    display: none;
+}
+
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+    box-shadow: none;
+    border-radius: 4px;
+}
+
+.leaflet-popup-content {
+    margin: 16px;
+
+}

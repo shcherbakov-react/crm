@@ -1,3 +1,9 @@
+
+
+.wrapper {
+    position: relative;
+}
+
 .checkbox {
     position: relative;
     display: none;
@@ -36,7 +42,6 @@
     left: calc(50% - 4px);
     width: 10px;
     height: 10px;
-    //background-image: url("../../assets/icon/arrow-right");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -50,3 +55,39 @@
     border-radius: 5px;
     color: #9F9F9F;
 }
+
+.text~label {
+    position: absolute;
+    left: 10px;
+    top: -12px;
+    padding: 0 6px;
+    font-size: 12px;
+    background: #fff;
+}
+
+.file {
+    height: 40px;
+    width: 250px;
+    padding: 10px 8px;
+    border: 1px solid #9F9F9F;
+    border-radius: 5px;
+    color: #9F9F9F;
+}
+
+.file~label {
+    position: absolute;
+    left: 10px;
+    top: -12px;
+    padding: 0 6px;
+    font-size: 12px;
+    background: #fff;
+}
+
+::-webkit-file-upload-button {
+    display: none;
+}
+
+input {
+    margin-bottom: 12px;
+}
+

@@ -2,6 +2,7 @@
 @import "variables/global";
 @import "themes/normal";
 @import "themes/dark";
+@import "map-leaflet";
 @import url("https://unpkg.com/leaflet@1.3.3/dist/leaflet.css");
 
 .app {
@@ -24,21 +25,3 @@
     overflow-x: hidden;
 }
 
-.leaflet-container {
-    width: 100%;
-    height: 700px;
-}
-
-.leaflet-touch .leaflet-control-attribution {
-    display: none;
-}
-
-.leaflet-top {
-    bottom: 0;
-    top: unset;
-}
-
-.leaflet-left {
-    right: 0;
-    left: unset;
-}

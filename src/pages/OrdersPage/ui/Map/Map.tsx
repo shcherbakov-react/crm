@@ -1,12 +1,16 @@
 import cls from './Map.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames';
 import React, { useState } from 'react';
-import { Circle, MapContainer, Marker, Polygon, Polyline, Popup, Rectangle, TileLayer, useMapEvents } from 'react-leaflet';
-import { iconPerson } from './MapIcon'
+import Courier from 'shared/assets/icons/courier.svg'
+import { MapContainer, Marker, Polygon, Polyline, Popup, TileLayer, useMapEvents } from 'react-leaflet';
+
 
 import "leaflet-control-geocoder/dist/Control.Geocoder.js";
 import { SearchBox } from 'pages/OrdersPage/ui/Map/SearchBox';
 import NewLayers from 'pages/OrdersPage/ui/Map/NewLayers';
+import { renderToStaticMarkup } from 'react-dom/server';
+import { divIcon } from 'leaflet';
+import { MapZoom } from 'pages/OrdersPage/ui/Map/MapZoom';
 
 interface MapProps {
     className?: string;
@@ -19,17 +23,20 @@ interface ParamsProps {
     polygon_geojson: number;
 }
 
-interface requestOptionsProps {
-    method: string,
-    redirect: string
-}
-
 
 export const Map = (props: MapProps) => {
     const {
         className,
     } = props;
 
+    const [iconSize, setIconSize] = useState({width: 22, height: 40})
+
+    const iconMarkup = renderToStaticMarkup(
+        <Courier viewBox="0 0 32 52" style={{ width: iconSize.width, height: iconSize.height}}/>
+    );
+    const customMarkerIcon = divIcon({
+        html: iconMarkup
+    });
     const [collapse, setCollapse] = useState(false);
     const [newZone, setNewZone] = useState<number[]>([])
     const polygon: [number, number][] = [
@@ -47,8 +54,6 @@ export const Map = (props: MapProps) => {
         window.dispatchEvent(new Event("resize"));
     }, 500);
 
-    // @ts-ignore
-    // @ts-ignore
     return (
         <div className={classNames(cls.Map, { [cls.collapse]: collapse }, [className])}>
             <div className={classNames(cls.btn, { [cls.collapse]: collapse })} onClick={() => setCollapse(!collapse)}>
@@ -64,18 +69,19 @@ export const Map = (props: MapProps) => {
             </div>
             <MapContainer bounds={polygon} className={cls.mapContainer} center={[45.015677, 41.903875]} zoom={14}>
                 {/*<SearchBox />*/}
+                <MapZoom setIconSize={setIconSize}/>
+                <Marker icon={customMarkerIcon}  position={[45.013677, 41.906875]} >
+                    <Popup>
+                        <div className={cls.popupTitle}>Кумейко А. (1/1)</div>
+                    </Popup>
+                </Marker>
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                <Marker position={[45.015677, 41.903875]}>
-                </Marker>
-                        <Polyline  positions={[newZone] as any} pathOptions={{ fillColor: 'red' }} />
-                {/*{newZone && newZone.map((item) => (*/}
-                {/*    )*/}
-                {/*)}*/}
+                <Marker icon={customMarkerIcon} position={[45.015677, 41.903875]} />
                 <Polygon pathOptions={{ fillColor: 'purple' }} positions={polygon} />
-                <NewLayers newZone={newZone} setNewZone={setNewZone} />
+                <NewLayers setNewZone={setNewZone} />
             </MapContainer>
         </div>
     )

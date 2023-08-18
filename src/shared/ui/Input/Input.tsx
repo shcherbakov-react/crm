@@ -11,17 +11,20 @@ interface InputProps extends HTMLInputProps{
     type?: string;
     id: string;
     onChange?: (value: string) => void;
-    placeholder?: string
+    placeholder?: string;
+    label?: string
 }
 export enum TypeInput {
     "CHECKBOX" = 'checkbox',
     "TEXT" = 'text',
+    "FILE" = 'file',
 }
 
 export const Input = (props: InputProps) => {
     const {
         type,
         className,
+        label,
         id,
         onChange,
         placeholder,
@@ -32,9 +35,9 @@ export const Input = (props: InputProps) => {
     };
 
     return (
-        <>
+        <div className={cls.wrapper}>
             <input onChange={onChangeHandler} placeholder={placeholder} type={type}  id={id} className={classNames(cls.input, { [cls[type]]: true }, [])} />
-            <label htmlFor={id}></label>
-        </>
+            <label htmlFor={id}>{label}</label>
+        </div>
     )
 }

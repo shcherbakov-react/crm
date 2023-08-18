@@ -1,7 +1,7 @@
 import cls from './Map.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames';
 import React, { useState } from 'react';
-import axios, { AxiosResponse } from 'axios';
+import axios from 'axios';
 import { Input, TypeInput } from 'shared/ui/Input/Input';
 
 interface SearchBoxProps {
@@ -10,10 +10,8 @@ interface SearchBoxProps {
 
 const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search?';
 
-export const SearchBox = (props: SearchBoxProps) => {
-    const {
-        className,
-    } = props;
+export const SearchBox = () => {
+
     const [searchText, setSearchText] = useState('')
     const [listPlace, setListPlace] = useState([]);
     const searchFunc = () => {
