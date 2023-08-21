@@ -1,4 +1,11 @@
+.input {
+    margin-bottom: 20px;
+}
 
+.input~label {
+    color: var(--grey);
+    border-color: var(--grey);
+}
 
 .wrapper {
     position: relative;

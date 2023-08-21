@@ -20,9 +20,26 @@ export const useSidebarItems = () => {
         },
 
         {
-            path: '/schedule',
             Icon: MontagesIcon,
-            text: 'Расписание смен',
+            text: 'Расписание',
+            isOpen: false,
+            nested: [
+                {
+                    path: '/workload',
+                    text: 'График нагрузки',
+                    Icon: UserIcon,
+                },
+                {
+                    path: '/schedule',
+                    text: 'Расписание сотрудников',
+                    Icon: UserIcon,
+                },
+                {
+                    path: '/patterns',
+                    text: 'Шаблоны нагрузки',
+                    Icon: UserIcon,
+                },
+            ]
         },
         {
             path: '/storage',
@@ -50,13 +67,38 @@ export const useSidebarItems = () => {
             text: 'Справочники',
         },
         {
-            // path: '/administration',
             Icon: UserIcon,
             text: 'Администрирование',
+            isOpen: false,
             nested: [
                 {
                     path: '/account',
                     text: 'Аккаунт',
+                    Icon: UserIcon,
+                },
+                {
+                    path: '/branches',
+                    text: 'Точки продаж',
+                    Icon: UserIcon,
+                },
+                {
+                    path: '/roles',
+                    text: 'Роли ',
+                    Icon: UserIcon,
+                },
+                {
+                    path: '/users',
+                    text: 'Пользователи',
+                    Icon: UserIcon,
+                },
+                {
+                    path: '/modules',
+                    text: 'Дополнительные модули',
+                    Icon: UserIcon,
+                },
+                {
+                    path: '/docs',
+                    text: 'Документация',
                     Icon: UserIcon,
                 },
             ]

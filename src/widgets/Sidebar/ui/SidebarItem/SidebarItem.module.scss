@@ -1,35 +1,25 @@
-.item {
-    display: flex;
-    align-items: center;
-}
 
 .link {
     margin-left: 10px;
     opacity: 1;
     color: var(--secondary-color);
     padding: 10px 0;
+    display: block;
 }
 
 .icon {
     fill: var(--inverted-primary-color);
 }
 
-.collapsed {
-    .link {
-        opacity: 0;
-        transition: 0.2s opacity;
-        width: 0;
-    }
-}
-
-.itemRedesigned {
+.item {
     display: flex;
     align-items: center;
     width: 100%;
     padding: 0 16px;
+    cursor: pointer;
 }
 
-.collapsedRedesigned {
+.collapsed {
     padding: 0 8px;
 
     .link {
@@ -39,20 +29,32 @@
     }
 }
 
-.active {
-    background: linear-gradient(89.97deg, rgba(94, 211, 243, 0.3) 1.15%, rgba(94, 211, 243, 0) 99.97%);
-    position: relative;
+.active .link {
+    color: red;
+}
 
-    &::before {
-        content: "";
-        position: absolute;
-        width: 2px;
-        left: 0;
-        background: var(--accent-redesigned);
-        height: 100%;
-    }
+.arrow {
+    margin-left: 5px;
 }
 
 .itemNested {
     padding: 0 16px 0 25px;
+    display: flex;
+}
+
+.nestedList {
+    transition: all .3s;
+    max-height: 0;
+    overflow: hidden;
+    display: grid;
+}
+
+.nestedTitle {
+    display: flex;
+    align-items: center;
+}
+
+.nestedListCollapse {
+    max-height: 1000px;
+    transition: all .3s;
 }

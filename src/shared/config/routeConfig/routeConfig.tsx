@@ -53,7 +53,6 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
     [AppRoutes.ACCOUNT]: {
         path: RoutePath.account,
         element: <AccountPage />,
-
     },
     [AppRoutes.NOT_FOUND]: {
         path: RoutePath.not_found,

@@ -26,13 +26,15 @@ export const Sidebar = ({ className }: SidebarProps) => {
             <div className={cls.logo}>
                 <Logo />
             </div>
-            {sidebarItemsList.map((item) => (
-                <SidebarItem
-                    item={item}
-                    collapsed={collapsed}
-                    key={item.path}
-                />
-            ))}
+            <div className={cls.menuList}>
+                {sidebarItemsList.map((item) => (
+                    <SidebarItem
+                        item={item}
+                        collapsed={collapsed}
+                        key={item.path}
+                    />
+                ))}
+            </div>
         </div>
     );
 };
