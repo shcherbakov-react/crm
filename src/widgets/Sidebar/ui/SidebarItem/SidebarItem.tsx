@@ -20,6 +20,7 @@ export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
         return (
             <AppLink
                 to={item.path}
+                activeClassName={cls.active}
                 className={classNames(cls.item, {
                     [cls.collapsed]: collapsed,
                 })}
@@ -57,6 +58,7 @@ export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
                     <AppLink
                         activeClassName={cls.active}
                         to={nested.path}
+                        key={nested.path}
                         className={classNames(cls.itemNested, {
                             [cls.collapsed]: collapsed,
                         })}

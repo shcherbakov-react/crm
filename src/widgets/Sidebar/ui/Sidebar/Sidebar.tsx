@@ -27,11 +27,11 @@ export const Sidebar = ({ className }: SidebarProps) => {
                 <Logo />
             </div>
             <div className={cls.menuList}>
-                {sidebarItemsList.map((item) => (
+                {sidebarItemsList.map((item, i) => (
                     <SidebarItem
                         item={item}
                         collapsed={collapsed}
-                        key={item.path}
+                        key={item.path + ' ' + i}
                     />
                 ))}
             </div>

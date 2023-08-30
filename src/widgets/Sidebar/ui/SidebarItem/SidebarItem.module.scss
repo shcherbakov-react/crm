@@ -30,7 +30,11 @@
 }
 
 .active .link {
-    color: red;
+    color: #fff;
+}
+
+.active svg path {
+    stroke: #fff;
 }
 
 .arrow {

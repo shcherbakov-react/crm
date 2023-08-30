@@ -1,16 +1,20 @@
-import {classNames} from 'shared/lib/classNames/classNames';
-import {AppLink} from 'shared/ui/AppLink/AppLink';
-import {useState} from 'react';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { useState } from 'react';
 import moment from 'moment';
-// @ts-ignore
 import cls from './Navbar.module.scss';
+import { useSelector } from 'react-redux';
+import { AuthSchema } from 'feature/Session/Login/model/types/AuthSchema';
+import { StateSchema } from 'app/providers/StoreProvider/config/StateSchema';
 
 interface NavbarProps {
     className?: string;
 }
 
 export const Navbar = ({ className }: NavbarProps) => {
-    const [date, setDate] = useState(new Date());
+    const date = new Date();
+    const getCounter = (state: StateSchema) => state.auth;
+    const userData = useSelector(getCounter)
     return (
         <div className={classNames(cls.Navbar, {}, [className])}>
             <div className={cls.info}>
@@ -45,7 +49,7 @@ export const Navbar = ({ className }: NavbarProps) => {
                         {moment(date).format('HH.mm')}
                     </div>
                 </div>
-                <div>login_name</div>
+                <div>{userData.login}</div>
             </div>
         </div>
     );

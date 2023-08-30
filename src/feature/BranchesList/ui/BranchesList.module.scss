@@ -1,0 +1,42 @@
+.LegalPerson {
+    max-width: 540px;
+}
+
+.filial {
+    display: grid;
+    gap: 8px;
+    height: max-content;
+    color: var(--grey);
+    padding: 20px;
+    border: 1px solid #DEDEDE;
+    border-radius: 5px;
+    margin-bottom: 12px;
+}
+
+.filialTitle {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.filialStatus {
+    color: var(--color-green);
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    font-size: 12px;
+}
+
+.filialDot {
+    background-color: var(--color-green);
+    width: 8px;
+    height: 8px;
+    display: block;
+    border-radius: 50%;
+}
+
+.filialInfo {
+    display: grid;
+    grid-template-columns: 1fr max-content max-content;
+    align-items: center;
+    gap: 10px;
+}

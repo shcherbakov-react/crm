@@ -1,43 +1,47 @@
 import cls from './Input.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames';
-import { InputHTMLAttributes } from 'react';
-
+import { forwardRef, InputHTMLAttributes } from 'react';
+import { UseFormRegister, FieldValues, useFormContext } from 'react-hook-form'
 type HTMLInputProps = Omit<
     InputHTMLAttributes<HTMLInputElement>,
     'value' | 'onChange' | 'readOnly'
 >;
-interface InputProps extends HTMLInputProps{
+
+interface InputProps extends HTMLInputProps {
     className?: string;
-    type?: string;
     id: string;
-    onChange?: (value: string) => void;
+    type?: string
     placeholder?: string;
     label?: string
+    required?: boolean
 }
+
 export enum TypeInput {
-    "CHECKBOX" = 'checkbox',
+    "PASSWORD" = 'password',
     "TEXT" = 'text',
     "FILE" = 'file',
+    "NUMBER" = 'number'
 }
 
 export const Input = (props: InputProps) => {
     const {
-        type,
         className,
         label,
         id,
-        onChange,
+        type,
         placeholder,
+        ...other
     } = props;
 
-    const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-        onChange?.(e.target.value);
-    };
+    const { register } = useFormContext();
 
     return (
-        <div className={cls.wrapper}>
-            <input onChange={onChangeHandler} placeholder={placeholder} type={type}  id={id} className={classNames(cls.input, { [cls[type]]: true }, [])} />
-            <label htmlFor={id}>{label}</label>
-        </div>
+        <>
+            <div className={cls.wrapper}>
+                <input type={type} autoComplete="new-password" {...register(id)} {...other} placeholder={placeholder}
+                       className={classNames(cls.input, { [cls[type]]: true }, [])} />
+                <label htmlFor={id}>{label}</label>
+            </div>
+        </>
     )
 }

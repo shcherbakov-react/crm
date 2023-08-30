@@ -2,12 +2,7 @@ import cls from './Map.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames';
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Input, TypeInput } from 'shared/ui/Input/Input';
-
-interface SearchBoxProps {
-    className?: string;
-}
-
+import { Input } from 'shared/ui/Input/Input';
 const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search?';
 
 export const SearchBox = () => {
@@ -28,10 +23,7 @@ export const SearchBox = () => {
     return (
         <div className={classNames(cls.Search)}>
             <div>
-                <Input type={TypeInput.TEXT} placeholder="Адрес" id="searchStreet" onChange={(event) => {
-                    setSearchText(event);
-                    searchFunc()
-                }} />
+
             </div>
             <ul className={cls.searchList}>
                 {listPlace && listPlace.map((item) => {

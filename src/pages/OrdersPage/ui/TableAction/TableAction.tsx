@@ -1,20 +1,23 @@
 import cls from './TableAction.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames';
-import { TableExport } from 'pages/OrdersPage/ui/TableAction/TableExport';
 
 interface TableActionProps {
     className?: string;
+    submit?: 	(data: Object, e?: Event) => Promise<void>;
 }
 
 export const TableAction = (props: TableActionProps) => {
     const {
+        submit,
         className,
     } = props;
+
+
 
     return (
         <div className={classNames(cls.TableAction, {}, [className])}>
             <div className={cls.actionGroup}>
-                <div>
+                <div >
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 8V16M16 12L8 12" stroke="#141B34" strokeWidth="1.5" strokeLinecap="round"
                               strokeLinejoin="round" />
@@ -32,7 +35,7 @@ export const TableAction = (props: TableActionProps) => {
                             stroke="#141B34" strokeWidth="1.5" />
                     </svg>
                 </div>
-                <div>
+                <div onClick={submit}>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M7.35396 18C5.23084 18 4.16928 18 3.41349 17.5468C2.91953 17.2506 2.52158 16.8271 2.26475 16.3242C1.87179 15.5547 1.97742 14.5373 2.18868 12.5025C2.36503 10.8039 2.45321 9.95455 2.88684 9.33081C3.17153 8.92129 3.55659 8.58564 4.00797 8.35353C4.69548 8 5.58164 8 7.35396 8H16.646C18.4184 8 19.3045 8 19.992 8.35353C20.4434 8.58564 20.8285 8.92129 21.1132 9.33081C21.5468 9.95455 21.635 10.8039 21.8113 12.5025C22.0226 14.5373 22.1282 15.5547 21.7352 16.3242C21.4784 16.8271 21.0805 17.2506 20.5865 17.5468C19.8307 18 18.7692 18 16.646 18"
@@ -69,7 +72,6 @@ export const TableAction = (props: TableActionProps) => {
                             d="M15.5 5.5L15.4227 5.23509C15.0377 3.91505 14.8452 3.25503 14.3869 2.87752C13.9286 2.5 13.3199 2.5 12.1023 2.5H11.8977C10.6801 2.5 10.0714 2.5 9.61309 2.87752C9.15478 3.25503 8.96228 3.91505 8.57727 5.23509L8.5 5.5"
                             stroke="#141B34" strokeWidth="1.5" />
                     </svg>
-
                 </div>
                 <div>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -115,7 +117,6 @@ export const TableAction = (props: TableActionProps) => {
                 </div>
             </div>
             <div className={cls.actionGroup}>
-                <TableExport />
                 <div className={cls.item}>
                     <span>Сбросить</span>
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -134,7 +135,6 @@ export const TableAction = (props: TableActionProps) => {
                             d="M15.5195 12C15.5195 13.933 13.9525 15.5 12.0195 15.5C10.0865 15.5 8.51953 13.933 8.51953 12C8.51953 10.067 10.0865 8.5 12.0195 8.5C13.9525 8.5 15.5195 10.067 15.5195 12Z"
                             stroke="#141B34" strokeWidth="1.5" />
                     </svg>
-
                 </div>
             </div>
         </div>

@@ -1,0 +1,105 @@
+.calendar {
+    display: block;
+    &Grid {
+        display: grid;
+        grid-template-columns: 327px repeat(7, 1fr);
+        border-left: 1px solid #e2e2e2;
+        border-bottom: 1px solid #e2e2e2;
+        border-top: 1px solid #e2e2e2;
+    }
+
+    &Actions {
+        text-transform: capitalize;
+        margin-bottom: 20px;
+        width: 100%;
+        display: grid;
+        align-items: center;
+        justify-content: space-between;
+        grid-auto-flow: column;
+
+        &__btn {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        &Prev i {
+            margin-right: 8px;
+        }
+
+        &Next i {
+            margin-left: 8px;
+        }
+    }
+
+    &-month {
+        font-size: 26px;
+        font-weight: 400;
+    }
+
+    &Сell {
+        min-height: 70px;
+        display: grid;
+        align-items: start;
+        gap: 30px;
+        border-right: 1px solid #e2e2e2;
+        padding: 10px;
+        grid-template-rows: max-content;
+
+        &__today {
+            background: rgba(255, 220, 40, .15);
+        }
+
+        &__day {
+            justify-self: end;
+        }
+
+        &--day {
+            padding: 5px 0;
+            display: flex;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+            border-right: 1px solid #e2e2e2;
+            color: #495d7c;
+        }
+
+        &__events {
+            display: grid;
+            gap: 10px;
+        }
+
+        &__description {
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+            cursor: pointer;
+
+            &.active {
+                display: block;
+            }
+        }
+    }
+}
+
+.tableTitle {
+    font-size: 24px;
+    font-weight: 500;
+    color: #121d22;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+}
+
+.tableCount {
+    color: var(--grey);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px 11px;
+    border: 1px solid #9F9EA4;
+    border-radius: 5px;
+    line-height: 1.2;
+    height: max-content;
+}

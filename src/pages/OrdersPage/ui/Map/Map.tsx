@@ -2,8 +2,8 @@ import cls from './Map.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames';
 import React, { useState } from 'react';
 import Courier from 'shared/assets/icons/courier.svg'
-import { MapContainer, Marker, Polygon, Polyline, Popup, TileLayer, useMapEvents } from 'react-leaflet';
-
+import { FeatureGroup, MapContainer, Marker, Polygon, Polyline, Popup, TileLayer, useMapEvents } from 'react-leaflet';
+import type { FeatureCollection } from 'geojson';
 
 import "leaflet-control-geocoder/dist/Control.Geocoder.js";
 import { SearchBox } from 'pages/OrdersPage/ui/Map/SearchBox';
@@ -11,6 +11,8 @@ import NewLayers from 'pages/OrdersPage/ui/Map/NewLayers';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { divIcon } from 'leaflet';
 import { MapZoom } from 'pages/OrdersPage/ui/Map/MapZoom';
+import { EditControl } from 'react-leaflet-draw';
+import drawLocales from 'leaflet-draw-locales'
 
 interface MapProps {
     className?: string;
@@ -29,10 +31,71 @@ export const Map = (props: MapProps) => {
         className,
     } = props;
 
-    const [iconSize, setIconSize] = useState({width: 22, height: 40})
+    const [geojson, setGeojson] = useState<FeatureCollection>({
+        type: 'FeatureCollection',
+        features: [
+            {
+                type: 'Feature',
+                properties: {},
+                geometry: {
+                    type: 'Polygon',
+                    coordinates: [
+                        [
+                            [-73.976344, 40.767867],
+                            [-73.984754, 40.774237],
+                            [-73.96742, 40.783206],
+                            [-73.966733, 40.773067],
+                            [-73.976344, 40.767867],
+                        ],
+                    ],
+                },
+            },
+            {
+                type: 'Feature',
+                properties: {},
+                geometry: {
+                    type: 'Polygon',
+                    coordinates: [
+                        [
+                            [-73.966304, 40.773782],
+                            [-73.965789, 40.790679],
+                            [-73.953861, 40.792109],
+                            [-73.953861, 40.778007],
+                            [-73.966304, 40.773782],
+                        ],
+                    ],
+                },
+            },
+            {
+                type: 'Feature',
+                properties: { radius: 100 },
+                geometry: { type: 'Point', coordinates: [-73.962357, 40.796658] },
+            },
+            {
+                type: 'Feature',
+                properties: { radius: 200 },
+                geometry: { type: 'Point', coordinates: [-73.950858, 40.78691] },
+            },
+            {
+                type: 'Feature',
+                properties: {},
+                geometry: {
+                    type: 'LineString',
+                    coordinates: [
+                        [-73.972912, 40.78639],
+                        [-73.984496, 40.780151],
+                        [-73.984496, 40.776122],
+                        [-73.970595, 40.781776],
+                    ],
+                },
+            },
+        ],
+    });
+
+    const [iconSize, setIconSize] = useState({ width: 22, height: 40 })
 
     const iconMarkup = renderToStaticMarkup(
-        <Courier viewBox="0 0 32 52" style={{ width: iconSize.width, height: iconSize.height}}/>
+        <Courier viewBox="0 0 32 52" style={{ width: iconSize.width, height: iconSize.height }} />
     );
     const customMarkerIcon = divIcon({
         html: iconMarkup
@@ -49,10 +112,18 @@ export const Map = (props: MapProps) => {
         [44.997218, 41.909686],
         [44.993269, 41.923269],
     ];
+    const ref = React.useRef<L.FeatureGroup>(null);
+    const handleChange = () => {
+        const geo = ref.current?.toGeoJSON();
+        console.log(geo);
+        if (geo?.type === 'FeatureCollection') {
+            setGeojson(geo);
+        }
+    };
 
     setTimeout(function () {
         window.dispatchEvent(new Event("resize"));
-    }, 500);
+    }, 10);
 
     return (
         <div className={classNames(cls.Map, { [cls.collapse]: collapse }, [className])}>
@@ -67,10 +138,10 @@ export const Map = (props: MapProps) => {
                           strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
             </div>
-            <MapContainer bounds={polygon} className={cls.mapContainer} center={[45.015677, 41.903875]} zoom={14}>
+            <MapContainer zoomControl={false} bounds={polygon} className={cls.mapContainer} center={[45.015677, 41.903875]} zoom={14}>
                 {/*<SearchBox />*/}
-                <MapZoom setIconSize={setIconSize}/>
-                <Marker icon={customMarkerIcon}  position={[45.013677, 41.906875]} >
+                <MapZoom setIconSize={setIconSize} />
+                <Marker icon={customMarkerIcon} position={[45.013677, 41.906875]}>
                     <Popup>
                         <div className={cls.popupTitle}>Кумейко А. (1/1)</div>
                     </Popup>
@@ -82,6 +153,22 @@ export const Map = (props: MapProps) => {
                 <Marker icon={customMarkerIcon} position={[45.015677, 41.903875]} />
                 <Polygon pathOptions={{ fillColor: 'purple' }} positions={polygon} />
                 <NewLayers setNewZone={setNewZone} />
+                <FeatureGroup ref={ref}>
+                    <EditControl
+                        position="topright"
+                        onEdited={handleChange}
+                        onCreated={handleChange}
+                        onDeleted={handleChange}
+                        draw={{
+                            rectangle: false,
+                            circle: false,
+                            polyline: true,
+                            polygon: true,
+                            marker: true,
+                            circlemarker: false,
+                        }}
+                    />
+                </FeatureGroup>
             </MapContainer>
         </div>
     )
