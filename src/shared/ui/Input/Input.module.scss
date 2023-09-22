@@ -1,6 +1,3 @@
-.input {
-    margin-bottom: 20px;
-}
 
 .input~label {
     color: var(--grey);
@@ -9,9 +6,14 @@
 
 .wrapper {
     position: relative;
+    &.large {
+        width: 100%;
+        & input {
+            width: 100%;
+
+        }
+    }
 }
-
-
 
 .text,
 .password{
@@ -19,8 +21,18 @@
     width: 250px;
     padding: 10px 8px;
     border: 1px solid #9F9F9F;
-    border-radius: 5px;
-    color: #9F9F9F;
+    border-radius: 12px;
+    color: var(--color-neutral-800);
+}
+
+
+input:focus {
+    border: 2px solid var(--color-primary-800);
+    outline: none;
+}
+
+input:focus~label {
+    color: var(--color-primary-800);
 }
 
 .text~label,
@@ -53,9 +65,5 @@
 
 ::-webkit-file-upload-button {
     display: none;
-}
-
-input {
-    margin-bottom: 12px;
 }
 

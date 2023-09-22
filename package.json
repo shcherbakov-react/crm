@@ -82,6 +82,7 @@
     "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.17",
     "@reduxjs/toolkit": "^1.9.5",
     "@tanstack/react-table": "^8.9.3",
     "@types/react-redux": "^7.1.26",
@@ -92,6 +93,7 @@
     "leaflet-defaulticon-compatibility": "^0.1.2",
     "leaflet-draw-locales": "^1.2.3",
     "moment": "^2.29.4",
+    "multiselect-react-dropdown": "^2.0.25",
     "plain-draggable": "^2.5.14",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

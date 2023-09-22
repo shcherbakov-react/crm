@@ -6,7 +6,7 @@ import cls from './Sidebar.module.scss';
 import { useSidebarItems } from '../../model/selectors/getSidebarItems';
 
 interface SidebarProps {
-    className?: string;
+    className?: string
 }
 
 const sidebarItemsList = useSidebarItems();

@@ -40,11 +40,20 @@
     &Сell {
         min-height: 70px;
         display: grid;
-        align-items: start;
-        gap: 30px;
-        border-right: 1px solid #e2e2e2;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
         padding: 10px;
-        grid-template-rows: max-content;
+        position: relative;
+        &::after {
+            content: '';
+            left: 0;
+            top: calc(50% - 20px);
+            height: 40px;
+            width: 1px;
+            background-color: var(--grey);
+            position: absolute;
+        }
 
         &__today {
             background: rgba(255, 220, 40, .15);
@@ -91,6 +100,12 @@
     align-items: center;
     justify-content: start;
     gap: 10px;
+}
+
+.btnGroup {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .tableCount {

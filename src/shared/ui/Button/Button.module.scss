@@ -1,6 +1,6 @@
 .Button {
     cursor: pointer;
-    color: var(--primary-color);
+    //color: var(--primary-color);
 }
 
 .clear {
@@ -23,7 +23,7 @@
 .outline {
     padding: 15px;
     border: 1px solid var(--primary-color);
-    color: var(--primary-color);
+    //color: var(--primary-color);
     background: none;
 }
 
@@ -45,4 +45,13 @@
     background: transparent;
     border: none;
     border-bottom: 1px solid var(--inverted-bg-color);
+}
+
+.small {
+    width: max-content;
+    padding: 8px 16px;
+    border-radius: var(--border-button-radius-300, 24px);
+    background: var(--color-button-primary-default, #9E77ED);
+    border: none;
+    color: #fff;
 }

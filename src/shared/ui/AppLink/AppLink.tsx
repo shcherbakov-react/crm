@@ -15,7 +15,8 @@ interface AppLinkProps extends LinkProps {
     activeClassName?: string;
 }
 
-export const AppLink: FC<AppLinkProps> = (props) => {
+export const
+    AppLink: FC<AppLinkProps> = (props) => {
     const {
         to,
         className,
@@ -32,6 +33,7 @@ export const AppLink: FC<AppLinkProps> = (props) => {
                 classNames(cls.AppLink, { [activeClassName]: isActive }, [
                     className,
                 ])
+
             }
             {...otherProps}
         >

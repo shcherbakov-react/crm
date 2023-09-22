@@ -1,9 +1,11 @@
 .Sidebar {
     height: 100vh;
     width: var(--sidebar-width);
-    background: var(--sidebar-color);
-    position: fixed;
+    background: var(--color-primary-100);
+    position: sticky;
+    top: 0;
     transition: width 0.3s;
+    padding-right: 4px;
 }
 
 .logo {
@@ -36,15 +38,15 @@
 
 ::-webkit-scrollbar {
     width: 4px;
-    border: 1px solid #d5d5d5;
+    //border: 1px solid var(--color-primary-200);
 }
 
 ::-webkit-scrollbar-track {
-    border-radius: 0;
-    background: #eeeeee;
+    border-radius: 12px;
+    background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-    border-radius: 0;
-    background: #b0b0b0;
+    border-radius: 12px;
+    background: var(--color-primary-200);
 }

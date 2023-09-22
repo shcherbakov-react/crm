@@ -24,12 +24,26 @@
     font-size: 12px;
 }
 
-.outletTitle {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+.title {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.info {
     display: flex;
     align-items: center;
-    justify-content: center;
-    color: #fff;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.infoItems {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+}
+
+.widgets {
+    display: flex;
+    gap: 32px;
 }

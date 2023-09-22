@@ -1,5 +1,7 @@
-import { AuthSchema } from 'feature/Session';
+import { UserSchema } from 'entities/User';
+import { LoginSchema } from 'features/AuthByUsername';
 
 export interface StateSchema {
-    auth: AuthSchema;
+    user: UserSchema;
+    loginForm: LoginSchema;
 }

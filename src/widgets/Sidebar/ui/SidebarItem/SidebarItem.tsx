@@ -8,8 +8,8 @@ import cls from './SidebarItem.module.scss';
 import Arrow from 'shared/assets/icons/arrow.svg'
 
 interface SidebarItemProps {
-    item: SidebarItemType;
-    collapsed: boolean;
+    item: SidebarItemType
+    collapsed: boolean
 }
 
 export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {

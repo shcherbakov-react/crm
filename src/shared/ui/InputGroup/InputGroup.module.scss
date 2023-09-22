@@ -1,0 +1,24 @@
+.inputGroup {
+    margin-bottom: 40px;
+}
+
+.inputGroupTitle {
+    margin-bottom: 24px;
+}
+
+.columns {
+    display: grid;
+    max-width: 100%;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    align-items: center;
+}
+
+.inputWrapper {
+    display: grid;
+    gap: 20px;
+}
+
+.descr {
+    width: max-content;
+}

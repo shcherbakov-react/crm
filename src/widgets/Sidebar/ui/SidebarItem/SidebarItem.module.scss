@@ -2,9 +2,10 @@
 .link {
     margin-left: 10px;
     opacity: 1;
-    color: var(--secondary-color);
+    color: var(--color-neutral-800);
     padding: 10px 0;
     display: block;
+
 }
 
 .icon {
@@ -17,6 +18,10 @@
     width: 100%;
     padding: 0 16px;
     cursor: pointer;
+    &:hover {
+        border-radius: 0 12px 12px 0;
+        background-color: var(--color-primary-200);
+    }
 }
 
 .collapsed {
@@ -30,11 +35,16 @@
 }
 
 .active .link {
-    color: #fff;
+    color: var(--color-primary-700);
+}
+
+.active {
+    background-color: var(--color-primary-300);
+    border-radius: 0 12px 12px 0;
 }
 
 .active svg path {
-    stroke: #fff;
+    stroke: var(--color-primary-700);
 }
 
 .arrow {
@@ -44,6 +54,10 @@
 .itemNested {
     padding: 0 16px 0 25px;
     display: flex;
+    &:hover {
+        border-radius: 0 12px 12px 0;
+        background-color: var(--color-primary-200);
+    }
 }
 
 .nestedList {

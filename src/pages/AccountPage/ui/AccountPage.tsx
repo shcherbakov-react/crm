@@ -1,50 +1,43 @@
 import cls from './AccountPage.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames';
-import { BaseSetting } from 'pages/AccountPage/ui/BaseSetting';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
-import { Tarifs } from './Tarifs';
-import { TarifsList } from 'pages/AccountPage/ui/TarifsList';
-import { Extra } from 'pages/AccountPage/ui/Extra';
-import { BranchesList } from 'feature/BranchesList';
+import { BaseSetting } from 'pages/AccountPage/ui/components/BaseSetting';
+import { TarifsInfo } from './components/TarifsInfo';
+import { BranchesList } from 'features/BranchesList';
 import { FormProvider, useForm } from 'react-hook-form';
+import { TopBar } from 'widgets/TopBar/ui/TopBar';
+import { ContentLayout } from 'widgets/ContentLayout/ContentLayout';
+import { BlockLayout } from 'shared/ui/BlockLayout/BlockLayout';
 
-interface AccountPageProps {
-    className?: string;
-}
-
-export const AccountPage = (props: AccountPageProps) => {
-    const {
-        className,
-    } = props;
-
+export const AccountPage = () => {
     const formMethods = useForm();
     const {
-        register,
-        control,
         handleSubmit,
-        formState: { errors }
     } = formMethods;
 
-
     const onSubmit = (data) => {
-
+        console.log(data)
     }
 
     return (
-        <div className={classNames(cls.AccountPage, {}, [className])}>
-            <div className={cls.info}>
-                <FormProvider {...formMethods}>
-                    <form onSubmit={handleSubmit(onSubmit)}>
-                        <BaseSetting />
-                        <BranchesList title="Юридическое лицо">
-                            <Button theme={ThemeButton.ADD}>Добавить</Button>
-                        </BranchesList>
-                        <Tarifs />
-                    </form>
-                </FormProvider>
-            </div>
-            <TarifsList />
-            <Extra />
-        </div>
+        <>
+            <TopBar title={'Аккаунт'} />
+            <ContentLayout>
+                <div className={classNames(cls.AccountPage, {}, [])}>
+                    <div className={cls.info}>
+                        <FormProvider {...formMethods}>
+                            <form className={cls.accountWrapper} onSubmit={handleSubmit(onSubmit)}>
+                                <BlockLayout>
+                                    <BaseSetting />
+                                </BlockLayout>
+                                <TarifsInfo />
+                                <BlockLayout>
+                                    <BranchesList title="Юридическое лицо" />
+                                </BlockLayout>
+                            </form>
+                        </FormProvider>
+                    </div>
+                </div>
+            </ContentLayout>
+        </>
     )
 }

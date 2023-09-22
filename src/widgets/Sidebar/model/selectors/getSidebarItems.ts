@@ -18,7 +18,6 @@ export const useSidebarItems = () => {
             Icon: ClientsIcon,
             text: 'Доставка',
         },
-
         {
             Icon: MontagesIcon,
             text: 'Расписание',
@@ -62,7 +61,7 @@ export const useSidebarItems = () => {
             text: 'Отчеты и аналитика',
         },
         {
-            path: '/report',
+            path: '/manuals',
             Icon: UserIcon,
             text: 'Справочники',
         },

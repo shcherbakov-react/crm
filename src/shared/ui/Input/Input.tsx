@@ -1,19 +1,28 @@
 import cls from './Input.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames';
 import { forwardRef, InputHTMLAttributes } from 'react';
-import { UseFormRegister, FieldValues, useFormContext } from 'react-hook-form'
+
 type HTMLInputProps = Omit<
     InputHTMLAttributes<HTMLInputElement>,
     'value' | 'onChange' | 'readOnly'
 >;
 
 interface InputProps extends HTMLInputProps {
-    className?: string;
-    id: string;
+    className?: string
+    id?: string
     type?: string
-    placeholder?: string;
+    width?: SizeInput
+    value?: string
+    placeholder?: string
     label?: string
+    onChange?: (value: string) => void
     required?: boolean
+}
+
+export enum SizeInput {
+    "SM" = 'small',
+    "MD" = 'medium',
+    "LG" = 'large'
 }
 
 export enum TypeInput {
@@ -29,16 +38,22 @@ export const Input = (props: InputProps) => {
         label,
         id,
         type,
+        width,
+        value,
+        onChange,
         placeholder,
         ...other
     } = props;
 
-    const { register } = useFormContext();
+    const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+        onChange?.(e.target.value);
+    };
 
     return (
         <>
-            <div className={cls.wrapper}>
-                <input type={type} autoComplete="new-password" {...register(id)} {...other} placeholder={placeholder}
+            <div className={classNames(cls.wrapper, { [cls[width]]: true }, [])}>
+                <input value={value} onChange={onChangeHandler} type={type} autoComplete="new-password" {...other}
+                       placeholder={placeholder}
                        className={classNames(cls.input, { [cls[type]]: true }, [])} />
                 <label htmlFor={id}>{label}</label>
             </div>

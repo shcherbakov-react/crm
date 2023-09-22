@@ -1,5 +1,5 @@
 import { Input } from 'shared/ui/Input/Input';
-import { OutletTitle } from 'pages/OrdersPage/ui/OutletTitle';
+import { OutletTitle } from 'shared/ui/OutletTitle/OutletTitle';
 import { createColumnHelper } from '@tanstack/react-table';
 import moment from 'moment';
 import { getPosition, getRole, getStatusCode, Users } from '../model/types/UsersPageSchema';
