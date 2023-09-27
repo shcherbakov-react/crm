@@ -1,5 +1,5 @@
 import cls from './DeliveryMap.module.scss'
-import {classNames} from 'shared/lib/classNames/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { Map } from 'features/DeliveryMap/ui/MapComponents/Map';
 
 interface DeliveryMapProps {
@@ -7,13 +7,13 @@ interface DeliveryMapProps {
 }
 
 export const DeliveryMap = (props: DeliveryMapProps) => {
-const {
-    className,
-} = props;
+    const {
+        className,
+    } = props;
 
     return (
-    <div className={classNames(cls.deliveryMap, {}, [className])}>
-        <Map />
-    </div>
+        <div className={classNames(cls.deliveryMap, {}, [className])}>
+            <Map />
+        </div>
     )
 }

@@ -7,6 +7,5 @@ import {
 describe('Sidebar', () => {
     test('with only first param', () => {
         expect(screen.getByTestId('sidebar')).toBeInTheDocument();
-
     });
 });

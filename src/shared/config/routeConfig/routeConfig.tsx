@@ -16,6 +16,7 @@ import { AccountingPage } from 'pages/AccountingPage';
 import { MarketingPage } from 'pages/MarketingPage';
 import { ReportPage } from 'pages/ReportPage';
 import { ManualsPage } from 'pages/ManualsPage';
+import { ManualClientsPage } from 'pages/ManualClientsPage';
 
 export type AppRoutesProps = RouteProps & {
     authOnly?: boolean
@@ -40,6 +41,7 @@ export enum AppRoutes {
     USERS = 'users',
     ROLES = 'roles',
     DELIVERY = 'delivery',
+    MANUAL_CLIENTS = 'manualClients'
 }
 
 export const RoutePath: Record<AppRoutes, string> = {
@@ -50,7 +52,6 @@ export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.ACCOUNTING]: '/accounting',
     [AppRoutes.MARKETING]: '/marketing',
     [AppRoutes.REPORTS]: '/report',
-    [AppRoutes.MANUALS]: '/manuals',
     [AppRoutes.SCHEDULE]: '/schedule',
     [AppRoutes.ADMINISTRATION]: '/admin',
     [AppRoutes.ACCOUNT]: '/account',
@@ -60,6 +61,11 @@ export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.USERS]: '/users',
     [AppRoutes.ROLES]: '/roles',
     [AppRoutes.LOGIN]: '/login',
+
+    //Справочкники
+    [AppRoutes.MANUALS]: '/manuals',
+    [AppRoutes.MANUAL_CLIENTS]: '/manual/clients',
+
 
     // последний
     [AppRoutes.NOT_FOUND]: '*',
@@ -84,6 +90,11 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
         path: RoutePath.manuals,
         authOnly: true,
         element: <ManualsPage />,
+    },
+    [AppRoutes.MANUAL_CLIENTS]: {
+        path: RoutePath.manualClients,
+        authOnly: true,
+        element: <ManualClientsPage />,
     },
     [AppRoutes.MARKETING]: {
         path: RoutePath.marketing,

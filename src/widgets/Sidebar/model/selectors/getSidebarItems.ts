@@ -61,9 +61,56 @@ export const useSidebarItems = () => {
             text: 'Отчеты и аналитика',
         },
         {
-            path: '/manuals',
             Icon: UserIcon,
             text: 'Справочники',
+            isOpen: false,
+            nested: [
+                {
+                    path: '/manual/clients',
+                    text: 'Клиенты',
+                    Icon: UserIcon,
+                },
+                {
+                    path: '/manual/address',
+                    text: 'Адреса и районы',
+                    Icon: UserIcon,
+                },
+                {
+                    path: '/manual/units',
+                    text: 'Единицы измерения',
+                    Icon: UserIcon,
+                },
+                {
+                    path: '/manual/categories',
+                    text: 'Категории товаров',
+                    Icon: UserIcon,
+                },
+                {
+                    path: '/manual/products',
+                    text: 'Продукты и заготовки',
+                    Icon: UserIcon,
+                },
+                {
+                    path: '/manual/mods',
+                    text: 'Модификаторы',
+                    Icon: UserIcon,
+                },
+                {
+                    path: '/manual/mods',
+                    text: 'Модификаторы',
+                    Icon: UserIcon,
+                },
+                {
+                    path: '/manual/products',
+                    text: 'Товары',
+                    Icon: UserIcon,
+                },
+                {
+                    path: '/manual/menu',
+                    text: 'Меню',
+                    Icon: UserIcon,
+                },
+            ]
         },
         {
             Icon: UserIcon,

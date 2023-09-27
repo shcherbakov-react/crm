@@ -12,8 +12,7 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, { re
     'login/loginByUsername',
     async (authData, thunkAPI) => {
         try {
-            // const response = await axios.post<User>('http://185.22.61.73:8085/auth', authData);
-            axios('http://185.22.61.73:8085/auth', {
+            axios('http://185.22.61.73:8086/auth', {
                 method: 'get',
                 auth: {
                     username: authData.username,

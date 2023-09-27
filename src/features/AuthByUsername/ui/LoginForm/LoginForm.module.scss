@@ -1,14 +1,23 @@
 .LoginForm {
-    display: flex;
-    flex-direction: column;
-    width: 400px;
+    display: grid;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    width: 420px;
+    height: 100%;
+}
+
+.wrapper {
+    margin: 0 auto;
+    height: max-content;
+    background-color: var(--color-primary-200);
+    padding: 32px;
+    border-radius: 12px;
+    display: grid;
+    gap: 16px;
 }
 
 .input {
     margin-top: 10px;
 }
 
-.loginBtn {
-    margin-top: 15px;
-    margin-left: auto;
-}

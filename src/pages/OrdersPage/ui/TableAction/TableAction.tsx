@@ -3,7 +3,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 
 interface TableActionProps {
     className?: string;
-    submit?: 	(data: Object, e?: Event) => Promise<void>;
+    submit?: (data: Object, e?: Event) => Promise<void>;
 }
 
 export const TableAction = (props: TableActionProps) => {
@@ -13,11 +13,10 @@ export const TableAction = (props: TableActionProps) => {
     } = props;
 
 
-
     return (
         <div className={classNames(cls.TableAction, {}, [className])}>
             <div className={cls.actionGroup}>
-                <div >
+                <div>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 8V16M16 12L8 12" stroke="#141B34" strokeWidth="1.5" strokeLinecap="round"
                               strokeLinejoin="round" />
