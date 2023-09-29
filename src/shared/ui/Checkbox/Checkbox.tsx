@@ -31,7 +31,7 @@ export const Checkbox = (props: InputProps) => {
                 <label htmlFor={id}>
                 <input {...register(id)} id={id} type="checkbox" {...other}
                        className={classNames(cls.input, {}, [])} />
-                    <span className={cls.label}>{label}</span>
+                    {/*<span className={cls.label}>{label}</span>*/}
                 </label>
             </div>
         </>

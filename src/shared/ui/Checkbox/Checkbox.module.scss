@@ -24,17 +24,18 @@ label:has(input[type="checkbox"])::after {
     cursor: pointer;
 }
 
-label:has(input[type="checkbox"]:checked)::after  {
+label:has(input[type="checkbox"]:checked)::after {
     background-color: #000;
 }
 
-label:has(input[type="checkbox"]:checked)::before {
+label:has(input[type="checkbox"])::before {
     content: '';
     position: absolute;
     top: calc(50% - 4px);
     left: calc(50% - 4px);
     width: 10px;
     height: 10px;
+    background-image: url("shared/assets/icons/arrow-white.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;

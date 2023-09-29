@@ -19,6 +19,7 @@ export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
     if (item?.path !== undefined) {
         return (
             <AppLink
+                data-testid={'sidebar-toggle'}
                 to={item.path}
                 activeClassName={cls.active}
                 className={classNames(cls.item, {
@@ -42,9 +43,7 @@ export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
                 <div
                     className={cls.nestedTitle}
                     onClick={() => setIsOpen(!isOpen)}>
-                    {
-                        item.Icon && <Icon Svg={item.Icon} />
-                    }
+                    {item.Icon && <Icon Svg={item.Icon} />}
                     <span className={cls.link}>{t(item.text)}</span>
                     <span className={cls.arrow}>
                             <Arrow />

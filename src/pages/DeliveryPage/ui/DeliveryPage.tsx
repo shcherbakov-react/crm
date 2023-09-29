@@ -22,6 +22,7 @@ export const DeliveryPage = () => {
                 </div>
             </div>
             {open && <div>meow</div>}
+            <div className={cls.test}></div>
         </>
     )
 }
