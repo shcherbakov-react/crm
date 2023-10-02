@@ -40,10 +40,12 @@ export const columns = [
 
     columnHelper.accessor('initials',  {
         header: () => 'ФИО',
+        cell: initials => <>{initials.renderValue()}</>
     }),
 
     columnHelper.accessor('login', {
         header: () => 'Логин',
+        cell: login => <>{login.renderValue()}</>
     }),
 
     columnHelper.accessor('status', {

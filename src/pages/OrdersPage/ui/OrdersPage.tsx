@@ -1,10 +1,10 @@
 import * as React from 'react'
 import { TableAction } from 'pages/OrdersPage/ui/TableAction/TableAction';
-import { Map } from 'features/DeliveryMap/ui/MapComponents/Map';
 import { columns, defaultData } from '../api/GetOrders';
 import { FormProvider, useForm } from 'react-hook-form';
 import { TopBar } from 'widgets/TopBar/ui/TopBar';
 import { Table } from 'shared/ui/Table/Table';
+import { DeliveryMap } from 'features/DeliveryMap/ui/DeliveryMap';
 
 export const OrdersPage = () => {
 
@@ -32,7 +32,7 @@ export const OrdersPage = () => {
         <>
             <TopBar title='Заказы' items={items} />
             <div className="content">
-                <Map />
+                <DeliveryMap />
                 <FormProvider {...formMethods}>
                     <TableAction submit={handleSubmit(printCheck)} />
                     <Table data={defaultData} columns={columns} />

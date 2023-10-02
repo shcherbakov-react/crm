@@ -96,12 +96,7 @@ export const useSidebarItems = () => {
                     Icon: UserIcon,
                 },
                 {
-                    path: '/manual/mods',
-                    text: 'Модификаторы',
-                    Icon: UserIcon,
-                },
-                {
-                    path: '/manual/products',
+                    path: '/manual/goods',
                     text: 'Товары',
                     Icon: UserIcon,
                 },

@@ -2,6 +2,9 @@ import cls from './DeliveryPage.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
 import { useState } from 'react';
+import { TopBar } from 'widgets/TopBar/ui/TopBar';
+import { ContentLayout } from 'widgets/ContentLayout/ContentLayout';
+import { DeliveryMap } from 'features/DeliveryMap/ui/DeliveryMap';
 
 export const DeliveryPage = () => {
 
@@ -15,14 +18,10 @@ export const DeliveryPage = () => {
 
     return (
         <>
-            <div className="content">
-                <div className={classNames(cls.deliveryPage, {}, [])}>
-                    <Dropdown items={items} />
-                    <Dropdown items={items} />
-                </div>
-            </div>
-            {open && <div>meow</div>}
-            <div className={cls.test}></div>
+            <TopBar title={'Доставка'}/>
+            <ContentLayout>
+                <DeliveryMap></DeliveryMap>
+            </ContentLayout>
         </>
     )
 }

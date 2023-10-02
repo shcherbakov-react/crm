@@ -5,6 +5,7 @@ import * as React from 'react';
 import { columns, defaultDataUsers } from 'pages/UsersPage/ui/Columns';
 import { TopBar } from 'widgets/TopBar/ui/TopBar';
 import { ContentLayout } from 'widgets/ContentLayout/ContentLayout';
+import { Table } from 'shared/ui/Table/Table';
 
 export const UsersPage = () => {
 
@@ -19,35 +20,7 @@ export const UsersPage = () => {
             <TopBar title={'Пользователи'} />
             <ContentLayout>
                 <div className={classNames(cls.usersPage, {}, [])}>
-                    <table className={cls.table}>
-                        <thead>
-                        {table.getHeaderGroups().map((headerGroup) => (
-                            <tr className={cls.header} key={headerGroup.id}>
-                                {headerGroup.headers.map(header => (
-                                    <th className={cls.cell} key={header.index}>
-                                        {header.isPlaceholder
-                                            ? null
-                                            : flexRender(
-                                                header.column.columnDef.header,
-                                                header.getContext()
-                                            )}
-                                    </th>
-                                ))}
-                            </tr>
-                        ))}
-                        </thead>
-                        <tbody>
-                        {table.getRowModel().rows.map(row => (
-                            <rt className={cls.row} key={row.id}>
-                                {row.getVisibleCells().map(cell => (
-                                    <td className={cls.cell} key={cell.id}>
-                                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                                    </td>
-                                ))}
-                            </rt>
-                        ))}
-                        </tbody>
-                    </table>
+                    <Table data={data} columns={columns} />
                 </div>
             </ContentLayout>
         </>
