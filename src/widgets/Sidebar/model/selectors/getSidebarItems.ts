@@ -132,7 +132,6 @@ export const useSidebarItems = () => {
                     text: 'Пользователи',
                     Icon: UserIcon,
                 },
-
                 {
                     path: '/modules',
                     text: 'Дополнительные модули',

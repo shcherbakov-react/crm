@@ -18,6 +18,20 @@ export const BaseSetting = () => {
         }))
     }
 
+    const styles = {
+        searchWrapper: {
+            width: 300,
+            height: 300,
+            margin: '50px auto',
+            backgroundColor: "orange",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: 'center',
+            alignItems: 'center',
+            fontWeight: "bold",
+        },
+    } as const;
+
     return (
         <div className={classNames(cls.info, {}, [])}>
             <div className={cls.basicSettings}>
@@ -26,21 +40,6 @@ export const BaseSetting = () => {
                     <Input id="image" type="file" label="Логотип" />
                     <Input id="color" type="file" label="Цвет" />
                 </InputGroup>
-                <Multiselect
-                    onSelect={(e, b) => addItem(e, b)}
-                    onRemove={(e, b) => removeItem(e, b)}
-                    hideSelectedList={false}
-                    showCheckbox={true}
-                    placeholder={'Добавить'}
-                    displayValue={'name'}
-                    options={options} />
-            </div>
-            <div className={'qwe'}>
-                {
-                    selectedItems.map((item) => (
-                        <div key={item.id}>{item.name}</div>
-                    ))
-                }
             </div>
             <div>
                 <Input id={'isChecked'} type="checkbox" />

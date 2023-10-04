@@ -5,6 +5,10 @@ import moment from 'moment';
 import { getPosition, getRole, getStatusCode, Users } from '../model/types/UsersPageSchema';
 import { RoleValue } from 'pages/UsersPage/ui/components/RoleValue';
 import { StatusValue } from 'pages/UsersPage/ui/components/StatusValue';
+import { Checkbox } from 'shared/ui/Checkbox/Checkbox';
+import { useState } from 'react';
+
+
 
 export const defaultDataUsers: Users[] = [
     {
@@ -35,10 +39,17 @@ export const defaultDataUsers: Users[] = [
         lastVisit: 1690096306,
     },
 ]
+
+
+
 export const columnHelper = createColumnHelper<Users>()
 export const columns = [
+    columnHelper.accessor('login', {
+        header: (val) => <Checkbox id={'selectAll'} />,
+        cell: (val) => <Checkbox id={val.renderValue()} />
+    }),
 
-    columnHelper.accessor('initials',  {
+    columnHelper.accessor('initials', {
         header: () => 'ФИО',
         cell: initials => <>{initials.renderValue()}</>
     }),
@@ -50,7 +61,9 @@ export const columns = [
 
     columnHelper.accessor('status', {
         header: () => 'Статус',
-        cell: status => <StatusValue theme={getStatusCode(status.renderValue())} text={getStatusCode(status.renderValue())} dataInt={status.renderValue()}></StatusValue>
+        cell: status => <StatusValue theme={getStatusCode(status.renderValue())}
+                                     text={getStatusCode(status.renderValue())}
+                                     dataInt={status.renderValue()}></StatusValue>
     }),
 
     columnHelper.accessor('roles', {
@@ -72,5 +85,4 @@ export const columns = [
         header: () => 'Последнее посещение',
         cell: time => moment.unix(time.renderValue()).lang('ru').format('DD.MM.yyyy-HH:mm')
     }),
-
 ]

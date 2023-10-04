@@ -1,5 +1,4 @@
 import cls from './BlockLayout.module.scss'
-import { classNames } from 'shared/lib/classNames/classNames';
 import { ReactNode } from 'react';
 
 interface BlockLayoutProps {

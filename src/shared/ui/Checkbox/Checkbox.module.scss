@@ -8,37 +8,30 @@ label:has(input[type="checkbox"]) {
     width: 20px;
     height: 20px;
     display: block;
-}
-
-label:has(input[type="checkbox"])::after {
-    content: '';
-    width: 16px;
-    height: 16px;
-    display: block;
-    background-color: transparent;
-    border: 1px solid #D0D5DD;
-    border-radius: 6px;
-    position: absolute;
-    left: 0;
-    top: calc(50% - 9px);
     cursor: pointer;
 }
 
-label:has(input[type="checkbox"]:checked)::after {
-    background-color: #000;
+.input {
+    border: 1px solid #625B6D;
+    border-radius: 4px;
+    width: 20px;
+    height: 20px;
+    display: block;
 }
 
-label:has(input[type="checkbox"])::before {
-    content: '';
+.check {
+    display: none;
     position: absolute;
-    top: calc(50% - 4px);
+    top: calc(50% - 3px);
     left: calc(50% - 4px);
-    width: 10px;
-    height: 10px;
-    background-image: url("shared/assets/icons/arrow-white.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
+}
+
+label:has(input:checked) .input {
+    background-color: #625B6D;
+}
+
+label:has(input:checked) .check {
+    display: block;
 }
 
 .label {

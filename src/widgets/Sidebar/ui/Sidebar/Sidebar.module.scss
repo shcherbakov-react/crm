@@ -1,7 +1,7 @@
 .Sidebar {
     height: 100vh;
     width: var(--sidebar-width);
-    background: var(--color-primary-100);
+    background: var(--token-nelset-base-colors-primary-100);
     position: sticky;
     top: 0;
     transition: width 0.3s;
@@ -33,7 +33,6 @@
 .menuList {
     overflow-y: auto;
     max-height: calc(100vh - 168px);
-
 }
 
 ::-webkit-scrollbar {

@@ -6,7 +6,7 @@ import { columns, defaultDataUsers } from 'pages/UsersPage/ui/Columns';
 import { TopBar } from 'widgets/TopBar/ui/TopBar';
 import { ContentLayout } from 'widgets/ContentLayout/ContentLayout';
 import { Table } from 'shared/ui/Table/Table';
-
+import { FormProvider, useForm } from 'react-hook-form';
 export const UsersPage = () => {
 
     const [data, setData] = React.useState(() => [...defaultDataUsers])
@@ -15,12 +15,16 @@ export const UsersPage = () => {
         columns,
         getCoreRowModel: getCoreRowModel(),
     });
+    const formMethods = useForm();
+
     return (
         <>
             <TopBar title={'Пользователи'} />
             <ContentLayout>
                 <div className={classNames(cls.usersPage, {}, [])}>
-                    <Table data={data} columns={columns} />
+                    <FormProvider {...formMethods}>
+                        <Table data={data} columns={columns} />
+                    </FormProvider>
                 </div>
             </ContentLayout>
         </>

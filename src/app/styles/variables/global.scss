@@ -7,7 +7,7 @@
     // Размеры
     --navbar-height: 50px;
     --sidebar-width: 272px;
-    --sidebar-width-collapsed: 80px;
+    --sidebar-width-collapsed: 830px;
 
     // z - Индексы
     --modal-z-index: 1000;
@@ -23,7 +23,6 @@
     border-radius: var(--border-button-radius-300, 24px);
     background: var(--color-button-primary-default, #9E77ED);
 }
-
 
 .h2 {
     font-size: 24px;
