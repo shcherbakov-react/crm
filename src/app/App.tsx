@@ -6,11 +6,13 @@ import { Sidebar } from 'widgets/Sidebar';
 import { useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { userActions } from 'entities/User';
+import { useTheme } from 'shared/lib/hooks/useTheme/useTheme';
+import { classNames } from 'shared/lib/classNames/classNames';
 
 function App() {
     const location = useLocation();
     const dispatch = useDispatch();
-
+    const { theme } = useTheme();
     useEffect(() => {
         dispatch(userActions.initAuthData());
     }, [dispatch]);
@@ -21,7 +23,7 @@ function App() {
 
     if (shouldShowSidebar()) {
         return (
-            <div className='app light'>
+            <div className={classNames('app light', {}, [theme])}>
                 <Suspense fallback="">
                     <Sidebar />
                     <div className='content-page'>
@@ -34,7 +36,7 @@ function App() {
     }
 
     return (
-        <div className='app app--clear light'>
+        <div className={classNames('app app--clear', {}, [theme])}>
             <Suspense fallback="">
                 <div className={'content-page--clear'}>
                     <AppRouter />

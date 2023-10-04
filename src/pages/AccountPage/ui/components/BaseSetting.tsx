@@ -4,6 +4,7 @@ import { Input } from 'shared/ui/Input/Input';
 import { Multiselect } from 'multiselect-react-dropdown';
 import { useState } from 'react';
 import { InputGroup } from 'shared/ui/InputGroup/InputGroup';
+import { ThemeSwitcher } from 'widgets/ThemeSwitcher/ui/ThemeSwitcher';
 
 export const BaseSetting = () => {
     const options = [{ name: 'Выбор 1', id: 1 }, { name: 'Выбор  2', id: 2 }]
@@ -38,7 +39,8 @@ export const BaseSetting = () => {
                 <InputGroup title={'Настройки'}>
                     <Input id="name" type="text" placeholder="Сушитайм" label="Название проекта" />
                     <Input id="image" type="file" label="Логотип" />
-                    <Input id="color" type="file" label="Цвет" />
+                    {/*<Input id="color" type="file" label="Цвет" />*/}
+                    <ThemeSwitcher/>
                 </InputGroup>
             </div>
             <div>

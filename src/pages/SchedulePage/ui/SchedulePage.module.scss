@@ -58,7 +58,7 @@
             top: calc(50% - 20px);
             height: 40px;
             width: 1px;
-            background-color: var(--grey);
+            background-color: var(--token-nelset-base-colors-neutral-200);
             position: absolute;
         }
 
@@ -176,7 +176,7 @@
 }
 
 .tableTochkaName {
-    background-color: var(--color-primary-800);
+    background-color: var(--token-nelset-base-colors-primary-800);
     color: white;
 }
 

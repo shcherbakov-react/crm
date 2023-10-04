@@ -19,7 +19,6 @@ export const SchedulePage = () => {
         <>
             <TopBar title={'Заказы'} />
             <ContentLayout>
-
                 <div className={cls.calendar}>
                     <div className={cls.calendarGrid}>
                         <div className={cls.tableTitle}>
