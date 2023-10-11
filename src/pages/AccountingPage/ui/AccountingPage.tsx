@@ -22,4 +22,5 @@ export const AccountingPage = (props: AccountingPageProps) => {
             </ContentLayout>
         </>
     )
+
 }

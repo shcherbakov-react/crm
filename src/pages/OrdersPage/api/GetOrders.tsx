@@ -4,6 +4,7 @@ import { getPaymentType, getStatusCode, Person } from 'pages/OrdersPage/model/ty
 import { createColumnHelper } from '@tanstack/react-table';
 import moment from 'moment';
 import { Checkbox } from 'shared/ui/Checkbox/Checkbox';
+import { Link } from 'react-router-dom';
 
 export const defaultData: Person[] = [
     {
@@ -77,8 +78,8 @@ export const columns = [
         cell: info => <OutletTitle outlet={info.getValue()} />,
     }),
     columnHelper.accessor('id', {
-        header: () => 'Номер заказа',
-        cell: info => info.getValue(),
+        header: (info) => 'Номер заказа',
+        cell: info => <Link to={`/orders/${info.getValue()}`}>{info.getValue()}</Link>,
     }),
     columnHelper.accessor('statusId', {
         header: () => 'Статус',
@@ -91,12 +92,10 @@ export const columns = [
     columnHelper.accessor('deliveryTime', {
         header: () => 'Доставлен до',
         cell: info => moment(info.renderValue()).lang('ru').format('HH.mm'),
-
     }),
     columnHelper.accessor('paymentType', {
         header: () => 'Тип оплаты',
         cell: info => getPaymentType(info.renderValue()),
-
     }),
     columnHelper.accessor('initials', {
         header: () => 'ФИО',

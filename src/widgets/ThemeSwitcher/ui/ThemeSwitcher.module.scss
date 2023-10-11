@@ -1,4 +1,46 @@
 .themeItem {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
+    border-radius: var(--radius-base-min);
+    cursor: pointer;
+}
+
+.themeSwitcher {
+    max-width: 228px;
+    height: 48px;
+    border: 1px solid #9f9f9f;
+    position: relative;
+    border-radius: 12px;
+    display: grid;
+    align-items: center;
+    padding: 10px 8px;
+}
+
+.themeName {
+    display: grid;
+    align-items: center;
+    gap: 30px;
+    grid-template-columns: max-content 1fr;
+    cursor: pointer;
+}
+
+.themeList {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    border-radius: var(--radius-base);
+    border: 1px solid #9F9EA4;
+    background: #fff;
+    top: calc(100% + 24px);
+    width: 100%;
+    max-width: 175px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
 }

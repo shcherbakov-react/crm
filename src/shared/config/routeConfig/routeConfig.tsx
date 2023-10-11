@@ -17,6 +17,8 @@ import { MarketingPage } from 'pages/MarketingPage';
 import { ReportPage } from 'pages/ReportPage';
 import { ManualsPage } from 'pages/ManualsPage';
 import { ManualClientsPage } from 'pages/ManualClientsPage';
+import { OrderPage } from 'pages/OrderPage/ui/OrderPage';
+import { TariffsPage} from 'pages/TariffsPage';
 
 export type AppRoutesProps = RouteProps & {
     authOnly?: boolean
@@ -27,6 +29,7 @@ export enum AppRoutes {
     ABOUT = 'about',
     NOT_FOUND = 'not_found',
     ORDERS = 'orders',
+    ORDER = 'order',
     STORAGE = 'storage',
     ACCOUNTING = 'accounting',
     ADMINISTRATION = 'admin',
@@ -41,13 +44,17 @@ export enum AppRoutes {
     USERS = 'users',
     ROLES = 'roles',
     DELIVERY = 'delivery',
-    MANUAL_CLIENTS = 'manualClients'
+    MANUAL_CLIENTS = 'manualClients',
+    TARIFFS = 'tariffs'
 }
 
 export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.MAIN]: '/',
     [AppRoutes.ABOUT]: '/about',
+
     [AppRoutes.ORDERS]: '/orders',
+    [AppRoutes.ORDER]: '/orders/:id',
+
     [AppRoutes.STORAGE]: '/storage',
     [AppRoutes.ACCOUNTING]: '/accounting',
     [AppRoutes.MARKETING]: '/marketing',
@@ -61,6 +68,7 @@ export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.USERS]: '/users',
     [AppRoutes.ROLES]: '/roles',
     [AppRoutes.LOGIN]: '/login',
+    [AppRoutes.TARIFFS]: '/account/tariffs',
 
     //Справочкники
     [AppRoutes.MANUALS]: '/manuals',
@@ -80,6 +88,17 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
         path: RoutePath.orders,
         authOnly: true,
         element: <OrdersPage />,
+    },
+    [AppRoutes.ORDER]: {
+        path: RoutePath.order,
+        authOnly: true,
+        element: <OrderPage />,
+    },
+
+    [AppRoutes.TARIFFS]: {
+        path: RoutePath.tariffs,
+        authOnly: true,
+        element: <TariffsPage />,
     },
     [AppRoutes.STORAGE]: {
         path: RoutePath.storage,
@@ -136,6 +155,8 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
         authOnly: true,
         element: <AccountingPage />,
     },
+
+
 
     // ADMINISTRATION
     [AppRoutes.BRANCHES]: {

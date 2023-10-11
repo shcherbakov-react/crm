@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import { useModal } from 'shared/lib/hooks/useModal/useModal';
-import { Overlay } from '../Overlay/Overlay';
+import { Overlay } from '../Overlay';
 import { Portal } from '../Portal/Portal';
 import cls from './Modal.module.scss';
 
@@ -51,7 +51,7 @@ export const Modal = (props: ModalProps) => {
                 <Overlay onClick={close} />
                 <div className={cls.wrapper}>
                     <div className={cls.header}>
-                    {title && (<div className={classNames(cls.title, {}, ['h3'])}>{title}</div>)}
+                        {title && (<div className={classNames(cls.title, {}, ['h3'])}>{title}</div>)}
                         <div onClick={onClose} className={cls.close}>
                             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">

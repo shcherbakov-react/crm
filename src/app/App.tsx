@@ -23,8 +23,8 @@ function App() {
 
     if (shouldShowSidebar()) {
         return (
-            <div className={classNames('app light', {}, [theme])}>
-                <Suspense fallback="">
+            <div className={classNames('app', {}, [theme])}>
+                <Suspense fallback=''>
                     <Sidebar />
                     <div className='content-page'>
                         <Navbar />

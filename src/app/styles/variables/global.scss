@@ -15,6 +15,10 @@
 
     //Цвета
     --color-green: #12B76A;
+
+    //radius
+    --radius-base: 12px;
+    --radius-base-min: 4px;
 }
 
 @mixin button-sm {

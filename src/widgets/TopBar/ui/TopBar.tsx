@@ -1,6 +1,5 @@
 import cls from './TopBar.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames';
-import { ReactNode } from 'react';
 
 interface TopBarProps {
     className?: string

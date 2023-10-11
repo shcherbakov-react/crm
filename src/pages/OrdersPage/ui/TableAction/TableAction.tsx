@@ -48,7 +48,6 @@ export const TableAction = (props: TableActionProps) => {
                         <path d="M18 12H18.009" stroke="#141B34" strokeWidth="2" strokeLinecap="round"
                               strokeLinejoin="round" />
                     </svg>
-
                 </div>
             </div>
             <div className={cls.actionGroup}>
@@ -112,7 +111,6 @@ export const TableAction = (props: TableActionProps) => {
                             d="M16.0251 20.9749L20.9726 16.0229M22 18.5C22 20.433 20.433 22 18.5 22C16.567 22 15 20.433 15 18.5C15 16.567 16.567 15 18.5 15C20.433 15 22 16.567 22 18.5Z"
                             stroke="#141B34" strokeWidth="1.5" strokeLinejoin="round" />
                     </svg>
-
                 </div>
             </div>
             <div className={cls.actionGroup}>

@@ -21,7 +21,7 @@
     width: 250px;
     padding: 10px 8px;
     border: 1px solid #9F9F9F;
-    border-radius: 12px;
+    border-radius: var(--radius-base);
     color: var(--color-neutral-800);
 }
 
@@ -51,7 +51,7 @@ input:focus~label {
     padding: 10px 8px;
     border: 1px solid #9F9F9F;
     color: #9F9F9F;
-    border-radius: 12px;
+    border-radius: var(--radius-base);
 }
 
 .file~label {
