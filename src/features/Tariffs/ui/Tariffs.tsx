@@ -1,4 +1,4 @@
-import cls from './Tarifs.module.scss'
+import cls from './Tariffs.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 
