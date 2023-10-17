@@ -3,7 +3,6 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 
 export const Tariffs = () => {
-
     const num = 5000;
     return (
         <div className={classNames(cls.TarifsList, {}, ['block'])}>
@@ -33,7 +32,7 @@ export const Tariffs = () => {
                                  xmlns="http://www.w3.org/2000/svg">
                                 <rect width="12" height="12" rx="2" fill="#939393" />
                                 <path d="M3 5.30769L5.1 8L9 3" stroke="white" strokeWidth="1.8" strokeLinecap="round"
-                                      strokeLinejoin="round" />
+                                    strokeLinejoin="round" />
                             </svg>
                             Склад и остатки
                         </li>
@@ -53,8 +52,7 @@ export const Tariffs = () => {
                                 <path d="M3 5.30769L5.1 8L9 3" stroke="white" strokeWidth="1.8" strokeLinecap="round"
                                       strokeLinejoin="round" />
                             </svg>
-
-                            Управление доставкой
+                             Управление доставкой
                         </li>
                     </ul>
                     <Button theme={ThemeButton.MORE}>Подробное описание</Button>

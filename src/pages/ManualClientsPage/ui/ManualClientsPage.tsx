@@ -1,9 +1,9 @@
-import cls from './ManualClientsPage.module.scss'
-import { classNames } from 'shared/lib/classNames/classNames';
-import { ClientsTable } from 'entities/Clients';
 import { FormProvider, useForm } from 'react-hook-form';
 import { TopBar } from 'widgets/TopBar/ui/TopBar';
 import { ContentLayout } from 'widgets/ContentLayout/ContentLayout';
+
+import {Table} from "shared/ui/Table/Table";
+import {ClientsColumns, GetClients} from "pages/ManualClientsPage/api/GetClients";
 
 export const ManualClientsPage = () => {
 
@@ -18,7 +18,7 @@ export const ManualClientsPage = () => {
             <TopBar title={'Клиенты'} />
             <ContentLayout>
                 <FormProvider {...formMethods}>
-                    <ClientsTable />
+                    <Table  data={GetClients} columns={ClientsColumns} />
                 </FormProvider>
             </ContentLayout>
         </>

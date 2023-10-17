@@ -1,13 +1,13 @@
 import cls from './Table.module.scss'
-import { FC } from 'react';
-import { ColumnDef, flexRender, getCoreRowModel, useReactTable } from '@tanstack/react-table';
+import {FC} from 'react';
+import {ColumnDef, flexRender, getCoreRowModel, useReactTable} from '@tanstack/react-table';
 
 interface TableProps {
     data: any[];
     columns: ColumnDef<any>[];
 }
 
-export const Table: FC<TableProps> = ({ data, columns }) => {
+export const Table: FC<TableProps> = ({data, columns}) => {
     const table = useReactTable({
         data,
         columns,
@@ -41,6 +41,7 @@ export const Table: FC<TableProps> = ({ data, columns }) => {
                         <td className={cls.cell} key={cell.id + index}>
                             {flexRender(cell.column.columnDef.cell, cell.getContext())}
                         </td>
+
                     ))}
                 </tr>
             ))}
