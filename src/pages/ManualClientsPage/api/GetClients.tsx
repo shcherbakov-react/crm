@@ -17,11 +17,11 @@ export const GetClients: Client[] = [
         phone: '+79987352563',
         address: 'Михайловск, Гоголя 16, кв. 52',
         person: 1,
-        sum: 2253,
+        sum: 2648,
         comment: 'Когда приедите, позвоните, я выйду',
     },
     {
-        id: 'CUST-312-1',
+        id: 'CUST-312-2',
         statusId: 3,
         date: 1692008533,
         cardNum: '4568 9069',
@@ -32,11 +32,11 @@ export const GetClients: Client[] = [
         phone: '+79987352563',
         address: 'Михайловск, Гоголя 16, кв. 52',
         person: 1,
-        sum: 2253,
+        sum: 5211,
         comment: 'Когда приедите, позвоните, я выйду',
     },
     {
-        id: 'CUST-312-1',
+        id: 'CUST-312-3',
         statusId: 3,
         date: 1692008533,
         deliveryTime: 1795119533,
@@ -47,10 +47,11 @@ export const GetClients: Client[] = [
         address: 'Михайловск, Гоголя 16, кв. 52',
         ordersCount: 2,
         person: 1,
-        sum: 2253,
+        sum: 12253,
         comment: 'Когда приедите, позвоните, я выйду',
     },
 ]
+
 export const columnHelper = createColumnHelper<Client>()
 export const ClientsColumns = [
 
@@ -59,11 +60,11 @@ export const ClientsColumns = [
         cell: info => <Checkbox id={`${info.getValue()}`}/>
     }),
     columnHelper.accessor('id', {
-        header: (info) => 'Номер заказа',
-        cell: info => <Link to={`/orders/${info.getValue()}`}>{info.getValue()}</Link>,
+        header: () => 'ID',
+        cell: info => <Link to={`/manual/clients/${info.getValue()}`}>{info.getValue()}</Link>,
     }),
     columnHelper.accessor('date', {
-        header: () => 'Оформлен',
+        header: () => 'Последний заказ',
         cell: info => moment(info.renderValue()).lang('ru').format('DD MMMM - HH.mm'),
     }),
     columnHelper.accessor('initials', {
@@ -77,6 +78,7 @@ export const ClientsColumns = [
     }),
     columnHelper.accessor('sum', {
         header: 'Сумма заказов',
+        cell: sum => sum.renderValue().toLocaleString('ru') + ' ₽'
     }),
     columnHelper.accessor('comment', {
         header: 'Комментарий',

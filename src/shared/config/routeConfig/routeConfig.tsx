@@ -17,8 +17,9 @@ import { MarketingPage } from 'pages/MarketingPage';
 import { ReportPage } from 'pages/ReportPage';
 import { ManualsPage } from 'pages/ManualsPage';
 import { ManualClientsPage } from 'pages/ManualClientsPage';
-import { OrderPage } from 'pages/OrderPage/ui/OrderPage';
+import { ClientPage } from 'pages/ClientPage/ui/ClientPage';
 import { TariffsPage} from 'pages/TariffsPage';
+import {OrderPage} from "pages/OrderPage";
 
 export type AppRoutesProps = RouteProps & {
     authOnly?: boolean
@@ -36,7 +37,10 @@ export enum AppRoutes {
     ACCOUNT = 'account',
     SCHEDULE = 'schedule',
     MARKETING = 'marketing',
+
     MANUALS = 'manuals',
+    MANUAL_CLIENT = 'manualClient',
+
     REPORTS = 'reports',
     NEWBRANCH = 'newBranch',
     BRANCHES = 'branches',
@@ -73,6 +77,8 @@ export const RoutePath: Record<AppRoutes, string> = {
     //Справочкники
     [AppRoutes.MANUALS]: '/manuals',
     [AppRoutes.MANUAL_CLIENTS]: '/manual/clients',
+    [AppRoutes.MANUAL_CLIENT]: '/manual/clients/add',
+    [AppRoutes.MANUAL_CLIENT]: '/manual/clients/:clientId',
 
 
     // последний
@@ -114,6 +120,11 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
         path: RoutePath.manualClients,
         authOnly: true,
         element: <ManualClientsPage />,
+    },
+    [AppRoutes.MANUAL_CLIENT]: {
+        path: RoutePath.manualClient,
+        authOnly: true,
+        element: <ClientPage />,
     },
     [AppRoutes.MARKETING]: {
         path: RoutePath.marketing,

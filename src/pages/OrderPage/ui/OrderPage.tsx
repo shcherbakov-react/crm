@@ -1,19 +1,20 @@
-import cls from './OrderPage.module.scss'
-import { classNames } from 'shared/lib/classNames/classNames';
-import { TopBar } from 'widgets/TopBar/ui/TopBar';
-import * as React from 'react';
-import { useParams } from 'react-router-dom';
-import { ContentLayout } from 'widgets/ContentLayout/ContentLayout';
+import {FC} from 'react';
+import {TopBar} from 'widgets/TopBar/ui/TopBar';
+import {ContentLayout} from 'widgets/ContentLayout/ContentLayout';
+import {useParams} from "react-router-dom";
 
-export const OrderPage = () => {
-    let { id } = useParams()
+interface IOrderPage {
 
+}
+
+export const OrderPage: FC<IOrderPage> = ({}) => {
+    let {id} = useParams()
     return (
-        <div className={classNames(cls.orderPage, {}, [])}>
-            <TopBar title={`Заказ №${id}`} />
+        <>
+            <TopBar title={`Заказ: ${id}`}/>
             <ContentLayout>
-                <div>qwe</div>
+                <div>Заказик</div>
             </ContentLayout>
-        </div>
+        </>
     )
 }

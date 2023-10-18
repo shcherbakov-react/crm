@@ -1,10 +1,10 @@
-import { Listbox, Menu } from '@headlessui/react';
-import { Fragment, ReactNode, useState } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { DropdownDirection } from 'shared/types/ui';
-import { AppLink } from '../AppLink/AppLink';
+import {Listbox, Menu} from '@headlessui/react';
+import {Fragment, ReactNode, useState} from 'react';
+import {classNames} from 'shared/lib/classNames/classNames';
+import {DropdownDirection} from 'shared/types/ui';
+import {AppLink} from '../AppLink/AppLink';
 import cls from './Dropdown.module.scss';
-import { mapDirectionClass } from '../Popups/styles/consts';
+import {mapDirectionClass} from '../Popups/styles/consts';
 import popupCls from '../Popups/styles/popup.module.scss';
 
 export interface DropdownItem {
@@ -37,12 +37,12 @@ export function Dropdown(props: DropdownProps) {
                 </Menu.Button>
                 <Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
                     {items.map((item, index) => {
-                        const content = ({ active }: { active: boolean }) => (
+                        const content = ({active}: { active: boolean }) => (
                             <button
                                 type="button"
                                 disabled={item.disabled}
                                 onClick={item.onClick}
-                                className={classNames(cls.item, { [popupCls.active]: active })}
+                                className={classNames(cls.item, {[popupCls.active]: active})}
                             >
                                 {item.content}
                             </button>

@@ -1,3 +1,3 @@
-import {ClientsTable} from 'entities/Clients/ui/ClientsTable';
+import {ClientsTable} from './ui/ClientsTable';
 
 export {ClientsTable}

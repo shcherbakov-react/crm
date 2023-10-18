@@ -1,3 +1,3 @@
-import {OrderPage} from 'pages/OrderPage/ui/OrderPage';
+import {OrderPage} from "./ui/OrderPage";
 
-export default {OrderPage}
+export {OrderPage}

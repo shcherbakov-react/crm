@@ -1,9 +1,7 @@
-import { FormProvider, useForm } from 'react-hook-form';
-import { TopBar } from 'widgets/TopBar/ui/TopBar';
-import { ContentLayout } from 'widgets/ContentLayout/ContentLayout';
-
-import {Table} from "shared/ui/Table/Table";
-import {ClientsColumns, GetClients} from "pages/ManualClientsPage/api/GetClients";
+import {FormProvider, useForm} from 'react-hook-form';
+import {TopBar} from 'widgets/TopBar/ui/TopBar';
+import {ContentLayout} from 'widgets/ContentLayout/ContentLayout';
+import {ClientsTable} from "entities/Clients";
 
 export const ManualClientsPage = () => {
 
@@ -15,10 +13,10 @@ export const ManualClientsPage = () => {
 
     return (
         <>
-            <TopBar title={'Клиенты'} />
+            <TopBar title={'Клиенты'}/>
             <ContentLayout>
                 <FormProvider {...formMethods}>
-                    <Table  data={GetClients} columns={ClientsColumns} />
+                    <ClientsTable/>
                 </FormProvider>
             </ContentLayout>
         </>

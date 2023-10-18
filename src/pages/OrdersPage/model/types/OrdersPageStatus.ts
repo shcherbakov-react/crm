@@ -7,7 +7,6 @@ export const getStatusCode = (num: number) => {
         "Завершен" = 4,
         "Не завершен" = 5,
     }
-
     return StatusCode[num]
 }
 
