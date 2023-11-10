@@ -1,21 +1,24 @@
-import React, { FC, useMemo, useState } from 'react';
-import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from '../lib/ThemeContext';
+import React, {FC} from 'react';
+import {ThemeProvider} from '@mui/material/styles';
+import createTheme from "@mui/material/styles/createTheme";
 
-const defaultTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme || Theme.LIGHT;
-
-const ThemeProvider: FC = ({ children }) => {
-    const [theme, setTheme] = useState<Theme>(defaultTheme);
-
-    const defaultProps = useMemo(() => ({
-        theme,
-        setTheme,
-    }), [theme]);
+const ThemeProviderComponent: FC = ({children}) => {
+    const theme = createTheme({
+        palette: {
+            primary: {
+                main: '#b692f6', // Здесь вы можете задать цвет основной палитры
+            },
+            secondary: {
+                main: '#2196f3', // Здесь вы можете задать цвет вторичной палитры
+            },
+        },
+    });
 
     return (
-        <ThemeContext.Provider value={defaultProps}>
+        <ThemeProvider theme={theme}>
             {children}
-        </ThemeContext.Provider>
-    );
+        </ThemeProvider>
+    )
 };
 
-export default ThemeProvider;
+export default ThemeProviderComponent;

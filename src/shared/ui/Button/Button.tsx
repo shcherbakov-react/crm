@@ -1,5 +1,5 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import { ButtonHTMLAttributes, FC } from 'react';
+import {classNames} from 'shared/lib/classNames/classNames';
+import {ButtonHTMLAttributes, FC} from 'react';
 import cls from './Button.module.scss';
 import Plus from 'shared/assets/icons/plus.svg';
 
@@ -28,10 +28,10 @@ export const Button: FC<ButtonProps> = (props) => {
     return (
         <button
             type="submit"
-            className={classNames(cls.Button, { [cls[theme]]: true }, [className])}
+            className={classNames(cls.Button, {[cls[theme]]: true}, [className])}
             {...otherProps}
         >
-            {theme === 'add' && <Plus />}
+            {theme === 'add' && <Plus/>}
             {children}
         </button>
     );

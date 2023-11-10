@@ -71,7 +71,6 @@ export function Dropdown(props: DropdownProps) {
                             </Menu.Item>
                         );
                     })}
-
                 </Menu.Items>
             </Menu>
         </>

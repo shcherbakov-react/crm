@@ -3,6 +3,7 @@
     border-left: 1px solid #EAECF0;
     border-right: 1px solid #EAECF0;
     width: 100%;
+    background-color: #fff;
 }
 
 .table>:not(caption)>*>* {
@@ -10,7 +11,7 @@
 }
 
 .header th {
-    background-color: #F9FAFB;
+    background-color: #FFF;
     font-size: 12px;
     font-weight: 500;
     padding: 11px 0;

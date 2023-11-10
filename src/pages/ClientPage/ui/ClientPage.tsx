@@ -1,6 +1,6 @@
 import {TopBar} from 'widgets/TopBar/ui/TopBar';
 import {ContentLayout} from 'widgets/ContentLayout/ContentLayout';
-import { useParams} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import {Table} from 'shared/ui/Table/Table';
 import {columns, defaultData} from "../../OrdersPage/api/GetOrders";
 import {FormProvider, useForm} from 'react-hook-form';
@@ -14,7 +14,7 @@ export const ClientPage = () => {
             <TopBar title={clientId !== 'add' ? `Клиент: ${clientId}` : 'Новый клиент'}/>
             <ContentLayout>
                 <FormProvider {...formMethods}>
-                    <ClientEditForm />
+                    <ClientEditForm/>
                     {clientId !== 'add' && <Table columns={columns} data={defaultData}/>}
                 </FormProvider>
             </ContentLayout>

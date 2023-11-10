@@ -1,10 +1,10 @@
-import { Input } from 'shared/ui/Input/Input';
-import { OutletTitle } from 'shared/ui/OutletTitle/OutletTitle';
-import { getPaymentType, getStatusCode, Person } from 'pages/OrdersPage/model/types/OrdersPageStatus';
-import { createColumnHelper } from '@tanstack/react-table';
+import {Input} from 'shared/ui/Input/Input';
+import {OutletTitle} from 'shared/ui/OutletTitle/OutletTitle';
+import {getPaymentType, getStatusCode, Person} from 'pages/OrdersPage/model/types/OrdersPageStatus';
+import {createColumnHelper} from '@tanstack/react-table';
 import moment from 'moment';
-import { Checkbox } from 'shared/ui/Checkbox/Checkbox';
-import { Link } from 'react-router-dom';
+import {Checkbox} from 'shared/ui/Checkbox/Checkbox';
+import {Link} from 'react-router-dom';
 
 export const defaultData: Person[] = [
     {
@@ -70,12 +70,12 @@ export const columns = [
 
     columnHelper.accessor('id', {
         header: () => '#',
-        cell: info => <Checkbox id={`${info.getValue()}`} />
+        cell: info => <Checkbox id={`${info.getValue()}`}/>
     }),
     columnHelper.accessor(row => row.outlet, {
         id: 'outletTitle',
         header: () => 'ТТ',
-        cell: info => <OutletTitle outlet={info.getValue()} />,
+        cell: info => <OutletTitle outlet={info.getValue()}/>,
     }),
     columnHelper.accessor('id', {
         header: (info) => 'Номер заказа',

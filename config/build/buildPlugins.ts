@@ -27,13 +27,13 @@ export function buildPlugins({ paths, isDev, }: BuildOptions): webpack.WebpackPl
         }));
     }
 
-    if (!isDev) {
-        plugins.push(new CopyPlugin({
-            patterns: [
-                { from: paths.images, to: paths.buildImages },
-            ],
-        }));
-    }
+    // if (!isDev) {
+    //     plugins.push(new CopyPlugin({
+    //         patterns: [
+    //             { from: paths.images, to: paths.buildImages },
+    //         ],
+    //     }));
+    // }
 
     return plugins;
 }
