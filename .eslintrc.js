@@ -39,9 +39,9 @@ module.exports = {
             code: 300,
         }],
     },
-    globals: {
-        __IS_DEV__: true,
-    },
+    // globals: {
+    //     __IS_DEV__: true,
+    // },
     overrides: [{
         files: ['**/src/**/*.test.{ts,tsx}'],
         rules: {

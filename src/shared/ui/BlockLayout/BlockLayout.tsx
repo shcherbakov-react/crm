@@ -1,14 +1,12 @@
-import cls from './BlockLayout.module.scss'
 import { ReactNode } from 'react';
+import cls from './BlockLayout.module.scss';
 
 interface BlockLayoutProps {
     children: ReactNode
 }
 
-export const BlockLayout = ({ children }: BlockLayoutProps) => {
-    return (
-        <div className={cls.blockLayout}>
-            {children}
-        </div>
-    )
-}
+export const BlockLayout = ({ children }: BlockLayoutProps) => (
+    <div className={cls.blockLayout}>
+        {children}
+    </div>
+);

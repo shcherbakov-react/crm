@@ -8,16 +8,16 @@
 
 .table {
     border-spacing: unset;
-    border-left: 1px solid #EAECF0;
-    border-right: 1px solid #EAECF0;
+    border-left: 1px solid #eaecf0;
+    border-right: 1px solid #eaecf0;
     width: 100%;
 }
 
-.table>:not(caption)>*>* {
-    border-bottom: 1px solid #EAECF0;
+.table > :not(caption) > * > * {
+    border-bottom: 1px solid #eaecf0;
 }
 
 .header th {
-    background-color: #F9FAFB;
+    background-color: #f9fafb;
     font-size: 12px;
 }

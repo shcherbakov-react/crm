@@ -53,7 +53,7 @@
         position: relative;
 
         &::after {
-            content: '';
+            content: "";
             left: 0;
             top: calc(50% - 20px);
             height: 40px;
@@ -63,7 +63,7 @@
         }
 
         &__today {
-            background: rgba(255, 220, 40, .15);
+            background: rgb(255 220 40 / 15%);
         }
 
         &__day {
@@ -86,7 +86,7 @@
         }
 
         &__description {
-            display: -webkit-box;
+            display: box;
             -webkit-line-clamp: 1;
             overflow: hidden;
             -webkit-box-orient: vertical;
@@ -128,7 +128,7 @@
     font-size: 12px;
     font-weight: 700;
     padding: 3px 11px;
-    border: 1px solid #9F9EA4;
+    border: 1px solid #9f9ea4;
     border-radius: 5px;
     line-height: 1.2;
     height: max-content;
@@ -139,9 +139,9 @@
     display: grid;
     align-items: center;
     justify-content: center;
-    background-color: #ECFDF3;
+    background-color: #ecfdf3;
     border-radius: 12px;
-    border: 1px solid #12B76A;
+    border: 1px solid #12b76a;
 }
 
 .calendarCell__weekday {

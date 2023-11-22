@@ -1,12 +1,12 @@
-@import 'reset';
-@import 'leaflet/dist/leaflet.css';
-@import 'leaflet-draw/dist/leaflet.draw.css';
-@import 'variables/global';
-@import 'themes/normal';
-@import 'themes/purple';
-@import 'map-leaflet';
-@import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css';
-@import url('https://unpkg.com/leaflet@1.3.3/dist/leaflet.css');
+@import "reset";
+@import "leaflet/dist/leaflet.css";
+@import "leaflet-draw/dist/leaflet.draw.css";
+@import "variables/global";
+@import "themes/normal";
+@import "themes/purple";
+@import "map-leaflet";
+@import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css";
+@import url("https://unpkg.com/leaflet@1.3.3/dist/leaflet.css");
 
 .sr-only {
     display: none;
@@ -19,7 +19,7 @@
 .app {
     font: var(--font-m);
     font-family: Inter, sans-serif;
-    background: var(--token-nelset-base-colors-primary-50);
+    //background: var(--token-nelset-base-colors-primary-50);
     color: var(--primary-color);
     min-height: 100vh;
     display: grid;
@@ -40,7 +40,7 @@
     display: grid;
     grid-template-rows: 56px 1fr;
     grid-template-columns: 1fr max-content;
-    padding: 0 10px 30px 10px;
+    //padding: 0 10px 30px;
     background-color: var(--color-primary-50);
     width: 100%;
 
@@ -57,18 +57,18 @@
 .active {
     width: max-content;
     padding: 2px 8px 2px 20px;
-    background-color: #ECFDF3;
-    color: #16B86C;
+    background-color: #ecfdf3;
+    color: #16b86c;
     border-radius: 16px;
     position: relative;
 
     &::after {
-        content: '';
+        content: "";
         left: 7px;
         height: 6px;
         width: 6px;
         border-radius: 50%;
-        background-color: #16B86C;
+        background-color: #16b86c;
         display: block;
         position: absolute;
         top: calc(50% - 3px);
@@ -78,18 +78,18 @@
 .blocked {
     width: max-content;
     padding: 2px 8px 2px 20px;
-    background-color: #FECEC8;
-    color: #FE6D6D;
+    background-color: #fecec8;
+    color: #fe6d6d;
     border-radius: 16px;
     position: relative;
 
     &::after {
-        content: '';
+        content: "";
         left: 7px;
         height: 6px;
         width: 6px;
         border-radius: 50%;
-        background-color: #FE6D6D;
+        background-color: #fe6d6d;
         display: block;
         position: absolute;
         top: calc(50% - 3px);

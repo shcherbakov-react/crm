@@ -5,17 +5,17 @@ input[type="checkbox"] {
 
 label:has(input[type="checkbox"]) {
     position: relative;
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     display: block;
     cursor: pointer;
 }
 
 .input {
-    border: 1px solid #625B6D;
+    border: 2px solid #A099AA;
     border-radius: 4px;
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     display: block;
 }
 
@@ -27,7 +27,8 @@ label:has(input[type="checkbox"]) {
 }
 
 label:has(input:checked) .input {
-    background-color: #625B6D;
+    background-color: #5F586A;
+    border-color: #5F586A;
 }
 
 label:has(input:checked) .check {

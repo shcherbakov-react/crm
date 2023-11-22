@@ -1,25 +1,25 @@
-import { RouteProps } from 'react-router-dom';
-import { MainPage } from 'pages/MainPage';
-import { AboutPage } from 'pages/AboutPage';
-import { NotFoundPage } from 'pages/NotFoundPage';
-import { OrdersPage } from 'pages/OrdersPage';
-import { SchedulePage } from 'pages/SchedulePage';
-import { AccountPage } from 'pages/AccountPage';
-import { BranchesPage } from 'pages/BranchesPage';
-import { UsersPage } from 'pages/UsersPage';
-import { LoginPage } from 'pages/LoginPage';
-import { AddBranch } from 'entities/Branches';
-import { DeliveryPage } from 'pages/DeliveryPage';
-import { RolesPage } from 'pages/RolesPage';
-import { StoragePage } from 'pages/StoragePage';
-import { AccountingPage } from 'pages/AccountingPage';
-import { MarketingPage } from 'pages/MarketingPage';
-import { ReportPage } from 'pages/ReportPage';
-import { ManualsPage } from 'pages/ManualsPage';
-import { ManualClientsPage } from 'pages/ManualClientsPage';
-import { ClientPage } from 'pages/ClientPage/ui/ClientPage';
-import { TariffsPage} from 'pages/TariffsPage';
-import {OrderPage} from "pages/OrderPage";
+import {RouteProps} from 'react-router-dom';
+import {MainPage} from 'pages/MainPage';
+import {AboutPage} from 'pages/AboutPage';
+import {NotFoundPage} from 'pages/NotFoundPage';
+import {OrdersPage} from 'pages/OrdersPage';
+import {SchedulePage} from 'pages/SchedulePage';
+import {AccountPage} from 'pages/AccountPage';
+import {BranchesPage} from 'pages/BranchesPage';
+import {UsersPage} from 'pages/UsersPage';
+import {LoginPage} from 'pages/LoginPage';
+import {AddBranch} from 'entities/Branches';
+import {DeliveryPage} from 'pages/DeliveryPage';
+import {RolesPage} from 'pages/RolesPage';
+import {StoragePage} from 'pages/StoragePage';
+import {AccountingPage} from 'pages/AccountingPage';
+import {MarketingPage} from 'pages/MarketingPage';
+import {ReportPage} from 'pages/ReportPage';
+import {ManualsPage} from 'pages/ManualsPage';
+import {ManualClientsPage} from 'pages/ManualClientsPage';
+import {ClientPage} from 'pages/ClientPage/ui/ClientPage';
+import {TariffsPage} from 'pages/TariffsPage';
+import {OrderPage} from 'pages/OrderPage';
 
 export type AppRoutesProps = RouteProps & {
     authOnly?: boolean
@@ -74,12 +74,11 @@ export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.LOGIN]: '/login',
     [AppRoutes.TARIFFS]: '/account/tariffs',
 
-    //Справочкники
+    // Справочкники
     [AppRoutes.MANUALS]: '/manuals',
     [AppRoutes.MANUAL_CLIENTS]: '/manual/clients',
     [AppRoutes.MANUAL_CLIENT]: '/manual/clients/add',
     [AppRoutes.MANUAL_CLIENT]: '/manual/clients/:clientId',
-
 
     // последний
     [AppRoutes.NOT_FOUND]: '*',
@@ -88,114 +87,112 @@ export const RoutePath: Record<AppRoutes, string> = {
 export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     [AppRoutes.MAIN]: {
         path: RoutePath.main,
-        element: <MainPage />,
+        element: <MainPage/>,
     },
     [AppRoutes.ORDERS]: {
         path: RoutePath.orders,
         authOnly: true,
-        element: <OrdersPage />,
+        element: <OrdersPage/>,
     },
     [AppRoutes.ORDER]: {
         path: RoutePath.order,
         authOnly: true,
-        element: <OrderPage />,
+        element: <OrderPage/>,
     },
 
     [AppRoutes.TARIFFS]: {
         path: RoutePath.tariffs,
         authOnly: true,
-        element: <TariffsPage />,
+        element: <TariffsPage/>,
     },
     [AppRoutes.STORAGE]: {
         path: RoutePath.storage,
         authOnly: true,
-        element: <StoragePage />,
+        element: <StoragePage/>,
     },
     [AppRoutes.MANUALS]: {
         path: RoutePath.manuals,
         authOnly: true,
-        element: <ManualsPage />,
+        element: <ManualsPage/>,
     },
     [AppRoutes.MANUAL_CLIENTS]: {
         path: RoutePath.manualClients,
         authOnly: true,
-        element: <ManualClientsPage />,
+        element: <ManualClientsPage/>,
     },
     [AppRoutes.MANUAL_CLIENT]: {
         path: RoutePath.manualClient,
         authOnly: true,
-        element: <ClientPage />,
+        element: <ClientPage/>,
     },
     [AppRoutes.MARKETING]: {
         path: RoutePath.marketing,
         authOnly: true,
-        element: <MarketingPage />,
+        element: <MarketingPage/>,
     },
     [AppRoutes.ABOUT]: {
         path: RoutePath.about,
         authOnly: true,
-        element: <AboutPage />,
+        element: <AboutPage/>,
     },
     [AppRoutes.SCHEDULE]: {
         path: RoutePath.schedule,
         authOnly: true,
-        element: <SchedulePage />,
+        element: <SchedulePage/>,
     },
     [AppRoutes.REPORTS]: {
         path: RoutePath.reports,
         authOnly: true,
-        element: <ReportPage />,
+        element: <ReportPage/>,
     },
     [AppRoutes.DELIVERY]: {
         path: RoutePath.delivery,
         authOnly: true,
-        element: <DeliveryPage />,
+        element: <DeliveryPage/>,
     },
     [AppRoutes.ADMINISTRATION]: {
         path: RoutePath.admin,
         authOnly: true,
-        element: <SchedulePage />,
+        element: <SchedulePage/>,
     },
     [AppRoutes.ACCOUNT]: {
         path: RoutePath.account,
         authOnly: true,
-        element: <AccountPage />,
+        element: <AccountPage/>,
     },
     [AppRoutes.ACCOUNTING]: {
         path: RoutePath.accounting,
         authOnly: true,
-        element: <AccountingPage />,
+        element: <AccountingPage/>,
     },
-
-
 
     // ADMINISTRATION
     [AppRoutes.BRANCHES]: {
         path: RoutePath.branches,
         authOnly: true,
-        element: <BranchesPage />,
+        element: <BranchesPage/>,
     },
     [AppRoutes.NEWBRANCH]: {
         path: RoutePath.newBranch,
         authOnly: true,
-        element: <AddBranch />,
+        element: <AddBranch/>,
     },
     [AppRoutes.USERS]: {
         path: RoutePath.users,
         authOnly: true,
-        element: <UsersPage />,
+        element: <UsersPage/>,
     },
     [AppRoutes.LOGIN]: {
         path: RoutePath.login,
-        element: <LoginPage />,
+        element: <LoginPage/>,
     },
     [AppRoutes.ROLES]: {
         path: RoutePath.roles,
         authOnly: true,
-        element: <RolesPage />,
+        element: <RolesPage/>,
     },
     [AppRoutes.NOT_FOUND]: {
         path: RoutePath.not_found,
-        element: <NotFoundPage />,
+        element: <NotFoundPage/>,
     },
 };

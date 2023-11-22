@@ -1,6 +1,6 @@
-import cls from './ContentLayout.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames';
 import { ReactNode } from 'react';
+import cls from './ContentLayout.module.scss';
 
 interface ContentLayoutProps {
     children: ReactNode
@@ -15,5 +15,5 @@ export const ContentLayout = (props: ContentLayoutProps) => {
         <div className={classNames(cls.contentLayout, {}, [])}>
             {children}
         </div>
-    )
-}
+    );
+};

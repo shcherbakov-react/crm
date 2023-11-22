@@ -24,21 +24,21 @@ function App() {
     if (shouldShowSidebar()) {
         return (
             <div className={classNames('app', {}, [theme])}>
-                <Suspense fallback=''>
+                <Suspense fallback="">
                     <Sidebar />
-                    <div className='content-page'>
+                    <div className="content-page">
                         <Navbar />
                         <AppRouter />
                     </div>
                 </Suspense>
             </div>
-        )
+        );
     }
 
     return (
         <div className={classNames('app app--clear', {}, [theme])}>
             <Suspense fallback="">
-                <div className={'content-page--clear'}>
+                <div className="content-page--clear">
                     <AppRouter />
                 </div>
             </Suspense>

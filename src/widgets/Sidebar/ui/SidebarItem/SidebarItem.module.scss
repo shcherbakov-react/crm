@@ -1,11 +1,9 @@
-
 .link {
     margin-left: 10px;
     opacity: 1;
     color: var(--token-nelset-base-colors-neutral-800);
     padding: 10px 0;
     display: block;
-
 }
 
 .icon {
@@ -18,6 +16,7 @@
     width: 100%;
     padding: 0 16px;
     cursor: pointer;
+
     &:hover {
         border-radius: 0 12px 12px 0;
         background-color: var(--token-nelset-base-colors-primary-200);
@@ -54,6 +53,7 @@
 .itemNested {
     padding: 0 16px 0 25px;
     display: flex;
+
     &:hover {
         border-radius: 0 12px 12px 0;
         background-color: var(--token-nelset-base-colors-primary-200);
@@ -61,7 +61,7 @@
 }
 
 .nestedList {
-    transition: all .3s;
+    transition: all 0.3s;
     max-height: 0;
     overflow: hidden;
     display: grid;
@@ -74,5 +74,5 @@
 
 .nestedListCollapse {
     max-height: 1000px;
-    transition: all .3s;
+    transition: all 0.3s;
 }

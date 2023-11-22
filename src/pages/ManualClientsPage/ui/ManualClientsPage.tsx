@@ -1,11 +1,9 @@
-import {FormProvider, useForm} from 'react-hook-form';
-import {TopBar} from 'widgets/TopBar/ui/TopBar';
-import {ContentLayout} from 'widgets/ContentLayout/ContentLayout';
-import {ClientsTable} from "entities/Clients";
+import { FormProvider, useForm } from 'react-hook-form';
+import { TopBar } from 'widgets/TopBar/ui/TopBar';
+import { ContentLayout } from 'widgets/ContentLayout/ContentLayout';
+import { ClientsTable } from 'entities/Clients';
 
 export const ManualClientsPage = () => {
-
-
     const formMethods = useForm();
     const {
         handleSubmit,
@@ -13,12 +11,12 @@ export const ManualClientsPage = () => {
 
     return (
         <>
-            <TopBar title={'Клиенты'}/>
+            <TopBar title="Клиенты" />
             <ContentLayout>
                 <FormProvider {...formMethods}>
-                    <ClientsTable/>
+                    <ClientsTable />
                 </FormProvider>
             </ContentLayout>
         </>
-    )
-}
+    );
+};

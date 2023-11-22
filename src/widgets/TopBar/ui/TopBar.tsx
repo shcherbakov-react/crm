@@ -1,15 +1,15 @@
-import cls from './TopBar.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames';
+import cls from './TopBar.module.scss';
+
+interface IItems {
+    title: string
+    value: number
+}
 
 interface TopBarProps {
     className?: string
     title: string
     items?: IItems[]
-}
-
-interface IItems {
-    title: string
-    value: number
 }
 
 export const TopBar = (props: TopBarProps) => {
@@ -25,18 +25,19 @@ export const TopBar = (props: TopBarProps) => {
                 <div className={cls.title}>
                     {title}
                 </div>
-                {items &&
-                    <div className={cls.infoItems}>
-                        {items.map((item) => (
-                            <div className={cls.item}>
-                                {item.title}
-                                :
-                                {item.value}
-                            </div>
-                        ))}
-                    </div>
-                }
+                {items
+                    && (
+                        <div className={cls.infoItems}>
+                            {items.map((item) => (
+                                <div className={cls.item}>
+                                    {item.title}
+                                    :
+                                    {item.value}
+                                </div>
+                            ))}
+                        </div>
+                    )}
             </div>
         </div>
-    )
-}
+    );
+};

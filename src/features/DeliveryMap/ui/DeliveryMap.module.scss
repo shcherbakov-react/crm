@@ -28,18 +28,18 @@
     cursor: pointer;
 }
 
-.btn.btnCollapse svg{
+.btn.btnCollapse svg {
     transform: rotate(180deg);
 }
 
 .mapContainer {
     height: 550px;
-    transition: height .5s;
+    transition: height 0.5s;
 }
 
-.collapse .mapContainer{
+.collapse .mapContainer {
     height: 0;
-    transition: height .5s;
+    transition: height 0.5s;
 }
 
 .Search {
@@ -64,5 +64,5 @@
 .searchItem {
     font-size: 16px;
     padding: 8px 0;
-    color: #9F9F9F;
+    color: #9f9f9f;
 }

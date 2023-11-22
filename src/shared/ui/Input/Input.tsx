@@ -12,7 +12,7 @@ interface InputProps extends HTMLInputProps {
     id?: string
     type?: string
     width?: SizeInput
-    value?: string
+    value?: string | number
     placeholder?: string
     label?: string
     onChange?: (value: string) => void
