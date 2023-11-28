@@ -96,6 +96,7 @@
     "leaflet": "^1.9.4",
     "leaflet-defaulticon-compatibility": "^0.1.2",
     "leaflet-draw-locales": "^1.2.3",
+    "leaflet-geosearch": "^3.11.0",
     "moment": "^2.29.4",
     "multiselect-react-dropdown": "^2.0.25",
     "plain-draggable": "^2.5.14",

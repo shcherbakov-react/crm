@@ -1,3 +1,3 @@
-import {ClientsTable} from './ui/ClientsTable';
+import { ClientsList } from './ui/ClientsList/ClientsList';
 
-export {ClientsTable}
+export { ClientsList };

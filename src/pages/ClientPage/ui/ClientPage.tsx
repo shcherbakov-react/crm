@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom';
 import { Table } from 'shared/ui/Table/Table';
 import { FormProvider, useForm } from 'react-hook-form';
 import { ClientEditForm } from 'features/ClientEditForm';
-import { columns, defaultData } from '../../OrdersPage/api/GetOrders';
 
 export const ClientPage = () => {
     const { clientId } = useParams();
@@ -15,7 +14,7 @@ export const ClientPage = () => {
             <ContentLayout>
                 <FormProvider {...formMethods}>
                     <ClientEditForm />
-                    {clientId !== 'add' && <Table columns={columns} data={defaultData} />}
+                    {/*{clientId !== 'add' && <Table columns={} data={defaultData} />}*/}
                 </FormProvider>
             </ContentLayout>
         </>

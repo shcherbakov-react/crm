@@ -1,13 +1,16 @@
-import { Input } from 'shared/ui/Input/Input';
 import { OutletTitle } from 'shared/ui/OutletTitle/OutletTitle';
-import { getPaymentType, getStatusCode, Person } from 'pages/OrdersPage/model/types/OrdersPageStatus';
 import { createColumnHelper } from '@tanstack/react-table';
 import moment from 'moment';
 import { Checkbox } from 'shared/ui/Checkbox/Checkbox';
+import {
+    getPaymentType,
+    getStatusCode,
+    Person,
+} from '../types/OrdersPageStatus';
 
-export const defaultData: Person[] = [
+export const ClientsListData: Person[] = [
     {
-        id: 52354,
+        id: '52354',
         outlet: {
             outletId: 1,
             outletTitle: 'Авокадо',
@@ -26,7 +29,7 @@ export const defaultData: Person[] = [
         comment: 'Когда приедите, позвоните, я выйду',
     },
     {
-        id: 52355,
+        id: '52355',
         outlet: {
             outletId: 2,
             outletTitle: 'Сушитайм',
@@ -45,7 +48,7 @@ export const defaultData: Person[] = [
         comment: 'Когда приедите, позвоните, я выйду',
     },
     {
-        id: 52356,
+        id: '52356',
         outlet: {
             outletId: 2,
             outletTitle: 'Сушитайм',
@@ -63,40 +66,38 @@ export const defaultData: Person[] = [
         sum: 2253,
         comment: 'Когда приедите, позвоните, я выйду',
     },
-]
-export const columnHelper = createColumnHelper<Person>()
-export const columns = [
-
+];
+export const columnHelper = createColumnHelper<Person>();
+export const ClientsListColumns = [
     columnHelper.accessor('id', {
         header: () => '#',
-        cell: info => <Checkbox id={`${info.getValue()}`}/>
+        cell: (info) => <Checkbox id={`${info.getValue()}`} />,
     }),
-    columnHelper.accessor(row => row.outlet, {
+    columnHelper.accessor((row) => row.outlet, {
         id: 'outletTitle',
         header: () => 'ТТ',
-        cell: info => <OutletTitle outlet={info.getValue()}/>,
+        cell: (info) => <OutletTitle outlet={info.getValue()} />,
     }),
     columnHelper.accessor('id', {
         header: () => 'Номер заказа',
-        cell: info => info.getValue(),
+        cell: (info) => info.getValue(),
     }),
     columnHelper.accessor('statusId', {
         header: () => 'Статус',
-        cell: info => getStatusCode(info.renderValue()),
+        cell: (info) => getStatusCode(info.renderValue()),
     }),
     columnHelper.accessor('date', {
         header: () => 'Оформлен',
-        cell: info => moment(info.renderValue()).lang('ru').format('DD MMMM - HH.mm'),
+        cell: (info) =>
+            moment(info.renderValue()).lang('ru').format('DD MMMM - HH.mm'),
     }),
     columnHelper.accessor('deliveryTime', {
         header: () => 'Доставлен до',
-        cell: info => moment(info.renderValue()).lang('ru').format('HH.mm'),
-
+        cell: (info) => moment(info.renderValue()).lang('ru').format('HH.mm'),
     }),
     columnHelper.accessor('paymentType', {
         header: () => 'Тип оплаты',
-        cell: info => getPaymentType(info.renderValue()),
-
+        cell: (info) => getPaymentType(info.renderValue()),
     }),
     columnHelper.accessor('initials', {
         header: () => 'ФИО',
@@ -119,4 +120,4 @@ export const columns = [
     columnHelper.accessor('comment', {
         header: 'Комментарий',
     }),
-]
+];

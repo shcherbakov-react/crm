@@ -1,0 +1,43 @@
+.couriers {
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    z-index: 1000;
+    font-size: 16px;
+
+    cursor: pointer;
+}
+.btn {
+    height: 40px;
+    padding: 0 10px;
+    display: flex;
+    gap: 10px;
+    background-color: #fff;
+    width: max-content;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.list {
+    width: max-content;
+    background-color: #fff;
+    padding: 20px;
+    max-height: 5000px;
+    visibility: visible;
+    opacity: 1;
+    &.collapse {
+        max-height: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: max-height 0.5s;
+    }
+}
+
+.courierItem {
+    padding: 7px 6px;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 1fr repeat(3, max-content);
+    align-items: center;
+    justify-content: space-between;
+}

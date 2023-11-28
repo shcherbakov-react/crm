@@ -29,7 +29,7 @@ export const TopBar = (props: TopBarProps) => {
                     && (
                         <div className={cls.infoItems}>
                             {items.map((item) => (
-                                <div className={cls.item}>
+                                <div className={cls.item} key={item?.title}>
                                     {item.title}
                                     :
                                     {item.value}

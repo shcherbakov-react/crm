@@ -37,6 +37,7 @@ export const getPosition = (data: string[]) => {
 }
 
 export type Users = {
+    id: string
     initials?: string
     login: string
     status: number

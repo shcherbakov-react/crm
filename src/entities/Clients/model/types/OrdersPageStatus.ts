@@ -22,7 +22,7 @@ export const getPaymentType = (num: number) => {
 }
 
 export type Person = {
-    id: number
+    id: string
     outlet: {
         outletId: number
         outletTitle: string

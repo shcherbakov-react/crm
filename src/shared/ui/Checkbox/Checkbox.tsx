@@ -25,7 +25,6 @@ export const Checkbox = (props: InputProps) => {
     } = props;
 
     const { register } = useFormContext();
-
     return (
         <div className={cls.wrapper}>
             <label htmlFor={id}>

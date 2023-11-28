@@ -1,4 +1,4 @@
-import cls from './MarketingPage.module.scss'
+import cls from './MarketingPage.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { TopBar } from 'widgets/TopBar/ui/TopBar';
 import { ContentLayout } from 'widgets/ContentLayout/ContentLayout';
@@ -8,9 +8,7 @@ interface MarketingProps {
 }
 
 export const MarketingPage = (props: MarketingProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
 
     return (
         <>
@@ -21,5 +19,5 @@ export const MarketingPage = (props: MarketingProps) => {
                 </div>
             </ContentLayout>
         </>
-    )
-}
+    );
+};
