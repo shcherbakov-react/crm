@@ -1,4 +1,4 @@
-import cls from './AccountPage.module.scss'
+import cls from './AccountPage.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { BaseSetting } from 'pages/AccountPage/ui/components/BaseSetting';
 import { TarifsInfo } from './components/TarifsInfo';
@@ -10,22 +10,23 @@ import { BlockLayout } from 'shared/ui/BlockLayout/BlockLayout';
 
 export const AccountPage = () => {
     const formMethods = useForm();
-    const {
-        handleSubmit,
-    } = formMethods;
+    const { handleSubmit } = formMethods;
 
     const onSubmit = (data) => {
-        console.log(data)
-    }
+        console.log(data);
+    };
 
     return (
         <>
-            <TopBar title={'Аккаунт'} />
+            <TopBar title="Аккаунт" />
             <ContentLayout>
                 <div className={classNames(cls.AccountPage, {}, [])}>
                     <div className={cls.info}>
                         <FormProvider {...formMethods}>
-                            <form className={cls.accountWrapper} onSubmit={handleSubmit(onSubmit)}>
+                            <form
+                                className={cls.accountWrapper}
+                                onSubmit={handleSubmit(onSubmit)}
+                            >
                                 <BlockLayout>
                                     <BaseSetting />
                                 </BlockLayout>
@@ -39,5 +40,5 @@ export const AccountPage = () => {
                 </div>
             </ContentLayout>
         </>
-    )
-}
+    );
+};

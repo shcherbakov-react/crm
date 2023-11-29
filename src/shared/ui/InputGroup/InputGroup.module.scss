@@ -1,8 +1,9 @@
 .inputGroup {
-    margin-bottom: 40px;
     background-color: #fff;
-    padding: 24px;
     border-radius: 24px;
+    & + .inputGroup {
+        margin-top: 40px;
+    }
 }
 
 .inputGroupTitle {

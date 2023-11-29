@@ -11,23 +11,13 @@ export const DeliveryMap = () => {
         45.011408, 41.901072,
     ]);
 
-    const polygon: [number, number][] = [
-        [45.019456, 41.93302],
-        [45.023698, 41.902784],
-        [45.024823, 41.900284],
-        [45.023376, 41.897328],
-        [45.003174, 41.890653],
-        [45.000264, 41.910393],
-        [44.997218, 41.909686],
-        [44.993269, 41.923269],
-    ];
-
     setTimeout(() => {
         window.dispatchEvent(new Event('resize'));
     }, 500);
 
     return (
         <div className={classNames(cls.Map, { [cls.collapse]: collapse }, [])}>
+            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
             <div
                 className={classNames(cls.btn, { [cls.collapse]: collapse })}
                 onClick={() => setCollapse(!collapse)}

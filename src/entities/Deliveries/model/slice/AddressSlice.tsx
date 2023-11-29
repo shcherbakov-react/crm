@@ -5,7 +5,7 @@ import { AddressSchema } from '../types/AddressListSchema';
 
 export const AddressListData: AddressSchema[] = [
     {
-        id: 'cqwe24112',
+        id: 'ZN-312-001',
         name: 'Сушитайм',
         status: 1,
         minSum: 350,
@@ -15,14 +15,44 @@ export const AddressListData: AddressSchema[] = [
         comment: '',
     },
     {
-        id: 'cqwe24113',
-        name: 'Сушитайм',
+        id: 'ZN-312-002',
+        name: 'Гармония',
         status: 1,
-        minSum: 350,
+        minSum: 400,
         minFreeDelivery: 500,
-        deliveryTime: 90,
-        deliveryRadius: '500 м',
+        deliveryTime: 40,
+        deliveryRadius: '2 км',
         comment: 'Постоянно пробки с 11 до 15',
+    },
+    {
+        id: 'ZN-312-003',
+        name: 'Выставка Михайловск',
+        status: 1,
+        minSum: 400,
+        minFreeDelivery: 500,
+        deliveryTime: 40,
+        deliveryRadius: '500 м',
+        comment: '',
+    },
+    {
+        id: 'ZN-312-004',
+        name: 'СНИСХ  Михайловск',
+        status: 0,
+        minSum: 400,
+        minFreeDelivery: 500,
+        deliveryTime: 40,
+        deliveryRadius: '1 км',
+        comment: '',
+    },
+    {
+        id: 'ZN-312-005',
+        name: 'Югозапад',
+        status: 1,
+        minSum: 400,
+        minFreeDelivery: 500,
+        deliveryTime: 40,
+        deliveryRadius: '800 м',
+        comment: '',
     },
 ];
 
@@ -31,6 +61,12 @@ export const AddressListColumns = [
     columnHelper.accessor('id', {
         header: () => '#',
         cell: (info) => <Checkbox id={info.getValue()} />,
+    }),
+    columnHelper.accessor('id', {
+        header: 'ID',
+    }),
+    columnHelper.accessor('name', {
+        header: 'Название',
     }),
     columnHelper.accessor('status', {
         header: () => 'Статус',

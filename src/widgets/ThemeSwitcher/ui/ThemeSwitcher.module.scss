@@ -6,20 +6,36 @@
 }
 
 .themeSwitcher {
-    max-width: 228px;
-    height: 48px;
+    max-width: 250px;
+    height: 40px;
     border: 1px solid #9f9f9f;
     position: relative;
     border-radius: 12px;
     display: grid;
     align-items: center;
-    padding: 10px 8px;
+    padding: 0 8px;
+}
+
+.iconColor {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+}
+
+.themeLabel {
+    position: absolute;
+    left: 10px;
+    top: -12px;
+    padding: 0 6px;
+    font-size: 12px;
+    background: #fff;
+    color: var(--token-nelset-base-colors-neutral-700);
 }
 
 .themeName {
     display: grid;
     align-items: center;
-    gap: 30px;
+    gap: 11px;
     grid-template-columns: max-content 1fr;
     cursor: pointer;
 }

@@ -29,6 +29,7 @@ module.exports = {
         'react/jsx-props-no-spreading': 'warn',
         'react/function-component-definition': 'off',
         'no-shadow': 'off',
+        'jsx-a11y/no-static-element-interactions': 'off',
         'import/extensions': 'off',
         'react/no-unescaped-entities': 0,
         'import/no-extraneous-dependencies': 'off',

@@ -70,7 +70,7 @@ export const columns = [
                 theme={getStatusCode(status.renderValue())}
                 text={getStatusCode(status.renderValue())}
                 dataInt={status.renderValue()}
-            ></StatusValue>
+            />
         ),
     }),
 

@@ -21,6 +21,7 @@ import { ClientPage } from 'pages/ClientPage/ui/ClientPage';
 import { TariffsPage } from 'pages/TariffsPage';
 import { OrderPage } from 'pages/OrderPage';
 import { ManualsAddressPage } from 'pages/MaualsAddressPage';
+import { UnitsOfMeasurementPage } from "pages/UnitsOfMeasurementPage/ui/UnitsOfMeasurementPage";
 
 export type AppRoutesProps = RouteProps & {
     authOnly?: boolean;
@@ -42,6 +43,7 @@ export enum AppRoutes {
     MANUALS = 'manuals',
     MANUAL_CLIENT = 'manualClient',
     MANUAL_ADDRESS_LIST = 'manualAddressList',
+    MANUAL_UNITS_LIST = 'manualUnitsList',
 
     REPORTS = 'reports',
     NEWBRANCH = 'newBranch',
@@ -82,6 +84,7 @@ export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.MANUAL_CLIENT]: '/manual/clients/add',
     [AppRoutes.MANUAL_CLIENT]: '/manual/clients/:clientId',
     [AppRoutes.MANUAL_ADDRESS_LIST]: '/manual/address',
+    [AppRoutes.MANUAL_UNITS_LIST]: '/manual/units',
 
     // последний
     [AppRoutes.NOT_FOUND]: '*',
@@ -132,6 +135,11 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
         path: RoutePath.manualAddressList,
         authOnly: true,
         element: <ManualsAddressPage />,
+    },
+    [AppRoutes.MANUAL_UNITS_LIST]: {
+        path: RoutePath.manualUnitsList,
+        authOnly: true,
+        element: <UnitsOfMeasurementPage />,
     },
     [AppRoutes.MARKETING]: {
         path: RoutePath.marketing,

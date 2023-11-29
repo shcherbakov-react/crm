@@ -23,7 +23,7 @@
     padding: 10px 8px;
     border: 1px solid #9f9f9f;
     border-radius: var(--radius-base);
-    color: var(--color-neutral-800);
+    color: var(--token-nelset-base-colors-neutral-800);
 }
 
 input:focus {
@@ -51,7 +51,7 @@ input:focus ~ label {
     width: 250px;
     padding: 10px 8px;
     border: 1px solid #9f9f9f;
-    color: #9f9f9f;
+    color: var(--token-nelset-base-colors-neutral-800);
     border-radius: var(--radius-base);
 }
 

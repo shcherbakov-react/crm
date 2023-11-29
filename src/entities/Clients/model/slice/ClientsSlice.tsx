@@ -10,61 +10,30 @@ import {
 
 export const ClientsListData: Person[] = [
     {
-        id: '52354',
-        outlet: {
-            outletId: 1,
-            outletTitle: 'Авокадо',
-            outletTitleColor: '#027A48',
-        },
+        id: 'CUST-312-1',
+        initials: 'Павел Андреевич',
         statusId: 2,
-        date: 1692008533,
-        deliveryTime: 1795119533,
-        paymentType: 2,
-        initials: 'Павел Андреевич',
-        phone: '+79987352563',
+        ordersCount: 11,
+        lastOrderTime: 71232133,
+        phones: [79987352563, 79987352124],
+        email: 'jsbach@yahoo.com',
+        numberCard: '9069',
         address: 'Михайловск, Гоголя 16, кв. 52',
-        district: 'Центр',
-        person: 1,
-        sum: 2253,
-        comment: 'Когда приедите, позвоните, я выйду',
+        ordersSum: 12254,
+        comment: 'Проблемный клиент',
     },
     {
-        id: '52355',
-        outlet: {
-            outletId: 2,
-            outletTitle: 'Сушитайм',
-            outletTitleColor: '#A259FF',
-        },
-        statusId: 3,
-        date: 1692008533,
-        deliveryTime: 1795119533,
-        paymentType: 0,
-        initials: 'Павел Андреевич',
-        phone: '+79987352563',
-        address: 'Михайловск, Гоголя 16, кв. 52',
-        district: 'Центр',
-        person: 1,
-        sum: 2253,
-        comment: 'Когда приедите, позвоните, я выйду',
-    },
-    {
-        id: '52356',
-        outlet: {
-            outletId: 2,
-            outletTitle: 'Сушитайм',
-            outletTitleColor: '#A259FF',
-        },
-        statusId: 3,
-        date: 1692008533,
-        deliveryTime: 1795119533,
-        paymentType: 0,
-        initials: 'Павел Андреевич',
-        phone: '+79987352563',
-        address: 'Михайловск, Гоголя 16, кв. 52',
-        district: 'Центр',
-        person: 1,
-        sum: 2253,
-        comment: 'Когда приедите, позвоните, я выйду',
+        id: 'CUST-312-2',
+        initials: 'Антон',
+        statusId: 2,
+        ordersCount: 2,
+        lastOrderTime: 71232133,
+        phones: [79885872356],
+        email: 'kmiller@optonline.net',
+        numberCard: '4568',
+        address: 'Ставрополь, проспект Кулакова, д.9, кв. 161',
+        ordersSum: 1250,
+        comment: 'Просят всегда приехать заранее',
     },
 ];
 export const columnHelper = createColumnHelper<Person>();
@@ -73,49 +42,40 @@ export const ClientsListColumns = [
         header: () => '#',
         cell: (info) => <Checkbox id={`${info.getValue()}`} />,
     }),
-    columnHelper.accessor((row) => row.outlet, {
-        id: 'outletTitle',
-        header: () => 'ТТ',
-        cell: (info) => <OutletTitle outlet={info.getValue()} />,
-    }),
     columnHelper.accessor('id', {
-        header: () => 'Номер заказа',
-        cell: (info) => info.getValue(),
+        header: () => 'ID',
+        cell: (info) => <div style={{minWidth: '100px'}}>{info.getValue()}</div>,
+    }),
+    columnHelper.accessor('initials', {
+        header: () => 'ФИО',
     }),
     columnHelper.accessor('statusId', {
         header: () => 'Статус',
         cell: (info) => getStatusCode(info.renderValue()),
     }),
-    columnHelper.accessor('date', {
-        header: () => 'Оформлен',
-        cell: (info) =>
-            moment(info.renderValue()).lang('ru').format('DD MMMM - HH.mm'),
+    columnHelper.accessor('ordersCount', {
+        header: 'Комментарий',
     }),
-    columnHelper.accessor('deliveryTime', {
-        header: () => 'Доставлен до',
-        cell: (info) => moment(info.renderValue()).lang('ru').format('HH.mm'),
+    columnHelper.accessor('phones', {
+        header: () => 'Телефон',
+        cell: (info) => info.renderValue().map((item) => (<div>+{item}</div>)),
     }),
-    columnHelper.accessor('paymentType', {
-        header: () => 'Тип оплаты',
-        cell: (info) => getPaymentType(info.renderValue()),
+    columnHelper.accessor('email', {
+        header: 'Email',
     }),
-    columnHelper.accessor('initials', {
-        header: () => 'ФИО',
+    columnHelper.accessor('lastOrderTime', {
+        header: 'Последний заказ',
+        cell: (time) => moment(time.renderValue()).lang('ru').format('DD MMMM - HH.mm'),
     }),
-    columnHelper.accessor('phone', {
-        header: 'Телефон',
+    columnHelper.accessor('numberCard', {
+        header: 'Номер карты',
     }),
     columnHelper.accessor('address', {
         header: 'Адрес',
     }),
-    columnHelper.accessor('district', {
-        header: 'Район',
-    }),
-    columnHelper.accessor('person', {
-        header: 'Персон',
-    }),
-    columnHelper.accessor('sum', {
-        header: 'Сумма',
+    columnHelper.accessor('ordersSum', {
+        header: '₽',
+        cell: (info) => <div style={{ minWidth: '100px' }}>{info.getValue().toLocaleString('ru') + ' ₽'}</div>,
     }),
     columnHelper.accessor('comment', {
         header: 'Комментарий',

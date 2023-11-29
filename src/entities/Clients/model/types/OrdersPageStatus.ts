@@ -23,20 +23,14 @@ export const getPaymentType = (num: number) => {
 
 export type Person = {
     id: string
-    outlet: {
-        outletId: number
-        outletTitle: string
-        outletTitleColor: string
-    }
-    statusId: number
-    date: number
-    deliveryTime: number
-    paymentType: number
     initials: string
-    phone: string
+    statusId: number
+    ordersCount: number
+    lastOrderTime: number
+    phones: number[]
+    email: string
+    numberCard: string
     address: string
-    district: string
-    person: number
-    sum: number
+    ordersSum: number
     comment: string
 }

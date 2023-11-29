@@ -1,9 +1,5 @@
-import * as React from 'react';
-import { TableAction } from 'pages/OrdersPage/ui/TableAction/TableAction';
 import { FormProvider, useForm } from 'react-hook-form';
 import { TopBar } from 'widgets/TopBar/ui/TopBar';
-import { Table } from 'shared/ui/Table/Table';
-import { DeliveryMap } from 'features/DeliveryMap/ui/DeliveryMap';
 import { OrdersList } from 'entities/Orders/ui/OrdersList/OrdersList';
 
 export const OrdersPage = () => {
@@ -29,9 +25,7 @@ export const OrdersPage = () => {
         <>
             <TopBar title="Заказы" items={items} />
             <div className="content">
-                <DeliveryMap />
                 <FormProvider {...formMethods}>
-                    <TableAction submit={handleSubmit(printCheck)} />
                     <OrdersList />
                 </FormProvider>
             </div>
