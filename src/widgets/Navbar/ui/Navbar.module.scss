@@ -19,13 +19,13 @@
 }
 
 .tariffTitle {
-    font-size: 14px;
+    font-size: var(--BodyMd);
     font-weight: 600;
     line-height: 20px;
 }
 
 .tariffDescr {
-    font-size: 12px;
+    font-size: var(--BodySm);
     line-height: 16px;
 }
 
@@ -37,14 +37,8 @@
     margin-right: 15px;
 }
 
-.time {
-    font-size: 24px;
-    font-weight: normal;
-    text-align: center;
-}
-
 .title {
-    font-size: 24px;
+    font-size: var(--HeadingXl);
     font-weight: 500;
 }
 
@@ -85,7 +79,7 @@
         width: 20px;
         height: 20px;
         border-radius: 50%;
-        color: #fff;
+        color: var(--token-nelset-base-colors-white-0);
         background-color: red;
         align-items: center;
         justify-content: center;

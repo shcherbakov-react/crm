@@ -1,26 +1,18 @@
 @import 'reset';
+@import 'variables/global';
 @import 'leaflet/dist/leaflet.css';
 @import 'leaflet-draw/dist/leaflet.draw.css';
-@import 'variables/global';
 @import 'themes/normal';
 @import 'themes/purple';
 @import 'map-leaflet';
 @import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css';
 @import url('https://unpkg.com/leaflet@1.3.3/dist/leaflet.css');
 
-.sr-only {
-    display: none;
-}
-
-.leaflet-bottom.leaflet-right {
-    display: none;
-}
 
 .app {
-    font: var(--font-m);
+    font: var(--BodyMd);
     font-family: Inter, sans-serif;
-    //background: var(--token-nelset-base-colors-primary-50);
-    color: var(--primary-color);
+    color: var(--token-nelset-base-colors-neutral-800);
     min-height: 100vh;
     display: grid;
     grid-template-columns: max-content 1fr;
@@ -43,55 +35,34 @@
     background-color: var(--token-nelset-base-colors-primary-50);
     width: 100%;
     padding-bottom: 30px;
-
-    &--clear {
-        width: 100%;
-    }
 }
 
 .content {
     grid-column: 1/3;
-    padding: 24px 10px 0 10px;
+    padding: 0 10px 0 10px;
 }
 
 .active {
     width: max-content;
-    padding: 2px 8px 2px 20px;
-    background-color: #ecfdf3;
-    color: #16b86c;
+    padding: 2px 8px;
+    background-color: var(--token-nelset-base-colors-success-200);
+    color: var(--token-nelset-base-colors-success-700);
     border-radius: 16px;
+    font-size: 12px;
     position: relative;
-
-    &::after {
-        content: '';
-        left: 7px;
-        height: 6px;
-        width: 6px;
-        border-radius: 50%;
-        background-color: #16b86c;
-        display: block;
-        position: absolute;
-        top: calc(50% - 3px);
-    }
 }
 
 .blocked {
     width: max-content;
-    padding: 2px 8px 2px 20px;
-    background-color: #fecec8;
-    color: #fe6d6d;
+    padding: 2px 8px;
+    background-color: var(--token-nelset-base-colors-error-200);
+    color: var(--token-nelset-base-colors-error-700);
     border-radius: 16px;
+    font-size: 12px;
+    line-height: 1.3;
     position: relative;
+}
 
-    &::after {
-        content: '';
-        left: 7px;
-        height: 6px;
-        width: 6px;
-        border-radius: 50%;
-        background-color: #fe6d6d;
-        display: block;
-        position: absolute;
-        top: calc(50% - 3px);
-    }
+.leaflet-bottom.leaflet-right {
+    display: none;
 }

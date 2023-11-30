@@ -6,10 +6,7 @@ import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorat
 const preview: Preview = {
     parameters: {
         actions: { argTypesRegex: '^on[A-Z].*' },
-        decorators: [
-            StyleDecorator,
-            RouterDecorator,
-        ],
+        decorators: [StyleDecorator, RouterDecorator],
         themes: [
             {
                 name: Theme.DARK,

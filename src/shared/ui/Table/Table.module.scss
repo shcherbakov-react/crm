@@ -1,6 +1,8 @@
 .table {
     border-spacing: unset;
-    width: 100%;
+    width: max-content;
+    padding: 12px 24px;
+    background-color: var(--token-nelset-base-colors-white-0);
 }
 
 .table > :not(caption) > * > * {
@@ -9,7 +11,7 @@
 
 .header th {
     text-align: start;
-    font-size: 12px;
+    font-size: var(--ButtonSm);
     font-weight: 500;
     padding: 11px 12px;
 }
@@ -17,14 +19,14 @@
 table td {
     font-size: 14px;
     font-weight: 400;
-    color: var(--secondary-color);
+    color: var(--BodyMd);
     text-align: start;
     padding: 11px 12px;
 
     & a {
-        font-size: 14px;
+        font-size: var(--BodyMd);
         font-weight: 400;
-        color: var(--secondary-color);
+        color: var(--token-nelset-base-colors-neutral-700);
         text-align: start;
     }
 }
@@ -47,4 +49,5 @@ thead {
 
 tbody td {
     border-bottom: 1px solid #EAE9EA;
+    background-color: var(--token-nelset-base-colors-white-0);
 }

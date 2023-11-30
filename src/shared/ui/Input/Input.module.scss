@@ -1,6 +1,5 @@
 .input ~ label {
-    color: var(--grey);
-    border-color: var(--grey);
+    color: var(--token-nelset-base-colors-neutral-700);
 }
 
 .wrapper {
@@ -21,18 +20,18 @@
     height: 40px;
     width: 250px;
     padding: 10px 8px;
-    border: 1px solid #9f9f9f;
+    border: 1px solid var(--token-nelset-base-colors-neutral-100);
     border-radius: var(--radius-base);
-    color: var(--token-nelset-base-colors-neutral-800);
+    color: var(--token-nelset-base-colors-neutral-700);
 }
 
 input:focus {
-    border: 1px solid var(--color-primary-800);
+    border: 1px solid var(--token-nelset-base-colors-primary-700);
     outline: none;
 }
 
 input:focus ~ label {
-    color: var(--color-primary-800);
+    color: var(--token-nelset-base-colors-neutral-700);
 }
 
 .text ~ label,
@@ -40,28 +39,29 @@ input:focus ~ label {
 .number ~ label{
     position: absolute;
     left: 10px;
-    top: -12px;
+    top: -9px;
+    color: var(--token-nelset-base-colors-neutral-700);
     padding: 0 6px;
-    font-size: 12px;
-    background: #fff;
+    font-size: var(--BodySm);
+    background: var(--token-nelset-base-colors-white-0);
 }
 
 .file {
     height: 40px;
     width: 250px;
     padding: 10px 8px;
-    border: 1px solid #9f9f9f;
-    color: var(--token-nelset-base-colors-neutral-800);
+    border: 1px solid var(--token-nelset-base-colors-neutral-100);
+    color: var(--token-nelset-base-colors-neutral-700);
     border-radius: var(--radius-base);
 }
 
 .file ~ label {
     position: absolute;
     left: 10px;
-    top: -12px;
+    top: -9px;
     padding: 0 6px;
     font-size: 12px;
-    background: #fff;
+    background: var(--token-nelset-base-colors-white-0);
 }
 
 ::-webkit-file-upload-button {

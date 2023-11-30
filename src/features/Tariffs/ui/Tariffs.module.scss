@@ -1,16 +1,16 @@
-.tarifBlock {
+.tariffBlock {
     display: grid;
     grid-template-columns: max-content 1fr;
     gap: 20px;
     margin-bottom: 40px;
 }
 
-.tarifBlock p {
+.tariffBlock p {
     font-size: 16px;
     line-height: 1.3;
 }
 
-.tarifBlock p + p {
+.tariffBlock p + p {
     margin-top: 8px;
 }
 
@@ -23,35 +23,44 @@
     align-self: end;
 }
 
-.tarifItem {
-    padding: 40px 25px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px 0 rgb(0 0 0 / 6%);
-}
-
-.tarifTitle {
+.tariffTitle {
     margin-bottom: 30px;
+    //@include Heading2Xl;
 }
 
-.TarifsList {
+.TariffsList {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
 
-.tarifName {
+.tariffName {
     color: var(--grey);
     margin-bottom: 30px;
     font-size: 18px;
 }
 
-.tarifLi {
+.tariffLi {
     display: flex;
-    gap: 5px;
+    gap: 11px;
     align-items: center;
+    & + .tariffLi {
+        margin-top: 8px;
+    }
 }
 
-.tarifUl {
+.tariffUl {
     color: var(--grey);
     margin-bottom: 12px;
+}
+
+.Price {
+    font-size: 24px;
+    line-height: 1.3;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 20px;
 }

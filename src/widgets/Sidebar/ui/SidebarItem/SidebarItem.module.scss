@@ -4,10 +4,11 @@
     color: var(--token-nelset-base-colors-neutral-800);
     padding: 10px 0;
     display: block;
+    font-size: var(--BodyMd);
 }
 
 .icon {
-    fill: var(--inverted-primary-color);
+    fill: var(--token-nelset-base-colors-neutral-700);
 }
 
 .item {
@@ -16,6 +17,7 @@
     width: 100%;
     padding: 0 16px;
     cursor: pointer;
+    font-size: var(--BodyMd);
 
     &:hover {
         border-radius: 0 12px 12px 0;
@@ -30,6 +32,7 @@
         opacity: 0;
         width: 0;
         margin: 0;
+        font-size: var(--BodyMd);
     }
 }
 

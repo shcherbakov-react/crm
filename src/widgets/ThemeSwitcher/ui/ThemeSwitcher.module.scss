@@ -8,7 +8,7 @@
 .themeSwitcher {
     max-width: 250px;
     height: 40px;
-    border: 1px solid #9f9f9f;
+    border: 1px solid var(--token-nelset-base-colors-neutral-100);
     position: relative;
     border-radius: 12px;
     display: grid;
@@ -25,10 +25,14 @@
 .themeLabel {
     position: absolute;
     left: 10px;
-    top: -12px;
+    top: -9px;
     padding: 0 6px;
     font-size: 12px;
-    background: #fff;
+    background: var(--token-nelset-base-colors-white-0);
+    color: var(--token-nelset-base-colors-neutral-700);
+}
+
+.themeNameRu {
     color: var(--token-nelset-base-colors-neutral-700);
 }
 
@@ -46,7 +50,7 @@
     position: absolute;
     border-radius: var(--radius-base);
     border: 1px solid #9f9ea4;
-    background: #fff;
+    background: var(--token-nelset-base-colors-white-0);
     top: calc(100% + 24px);
     width: 100%;
     max-width: 175px;

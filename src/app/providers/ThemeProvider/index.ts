@@ -8,3 +8,8 @@ export {
     // useTheme,
     // Theme,
 };
+
+export class Theme {
+    static LIGHT: any;
+    static DARK: any;
+}

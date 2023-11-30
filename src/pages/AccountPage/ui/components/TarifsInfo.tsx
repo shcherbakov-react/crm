@@ -2,7 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import cls from '../AccountPage.module.scss';
 
-export const TarifsInfo = () => {
+export const TariffsInfo = () => {
     return (
         <div className={classNames(cls.tariffs, {}, ['block'])}>
             <h3 className={classNames('', {}, ['h2'])}>Ваш тарифный план</h3>

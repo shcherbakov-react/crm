@@ -1,6 +1,5 @@
 .Button {
     cursor: pointer;
-
     //color: var(--primary-color);
 }
 
@@ -16,7 +15,7 @@
     color: var(--token-nelset-base-colors-white-0);
     margin: 0;
     border: none;
-    border-radius: 5px;
+    border-radius: var(--size-border-button-radius-300);
     outline: none;
     transition: var(--transition-base);
 }
@@ -24,8 +23,6 @@
 .outline {
     padding: 15px;
     border: 1px solid var(--token-nelset-base-colors-primary-500);
-
-    //color: var(--primary-color);
     background: none;
 }
 
@@ -52,8 +49,8 @@
 .small {
     width: max-content;
     padding: 8px 16px;
-    border-radius: var(--border-button-radius-300, 24px);
+    border-radius: var(--size-border-button-radius-300, 24px);
     background: var(--color-button-primary-default, #9e77ed);
     border: none;
-    color: #fff;
+    color: var(--token-nelset-base-colors-white-0);
 }

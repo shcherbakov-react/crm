@@ -38,8 +38,11 @@ export const ThemeSwitcher = () => {
                 className={cls.themeName}
                 onClick={() => setIsActive(!isActive)}
             >
-                <div style={{ backgroundColor: `${activeElem.color}` }} className={cls.iconColor} />
-                <div>{activeElem.ruName}</div>
+                <div
+                    style={{ backgroundColor: `${activeElem.color}` }}
+                    className={cls.iconColor}
+                />
+                <div className={cls.themeNameRu}>{activeElem.ruName}</div>
                 <div className={cls.themeLabel}>Цвет интерфейса</div>
             </div>
             <div

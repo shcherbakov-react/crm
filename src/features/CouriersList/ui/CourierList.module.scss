@@ -12,7 +12,7 @@
     padding: 0 10px;
     display: flex;
     gap: 10px;
-    background-color: #fff;
+    background-color: var(--token-nelset-base-colors-white-0);
     width: max-content;
     align-items: center;
     justify-content: space-between;
@@ -20,7 +20,7 @@
 
 .list {
     width: max-content;
-    background-color: #fff;
+    background-color: var(--token-nelset-base-colors-white-0);
     padding: 20px;
     max-height: 5000px;
     visibility: visible;
