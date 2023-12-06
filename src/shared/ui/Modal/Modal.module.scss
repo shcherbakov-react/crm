@@ -16,11 +16,10 @@
 }
 
 .wrapper {
+    position: relative;
     border-radius: var(--radius-base);
     background: var(--token-nelset-base-colors-white-0);
     transition: 0.3s transform;
-
-    //transform: scale(0.5);
     max-width: 60%;
     min-width: 680px;
     max-height: 100%;
@@ -28,7 +27,7 @@
 }
 
 .content {
-    padding: 0 24px 20px;
+    padding: 20px 24px 20px;
     max-height: 80vh;
     overflow-y: auto;
 }
@@ -60,9 +59,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-radius: 12px 12px 0  0;
+    border-radius: 12px 12px 0 0;
 }
 
 .title {
     margin-bottom: 0;
+    color: var(--token-nelset-base-colors-neutral-800);
+    font-weight: 600;
+    font-size: var(--HeadingXl);
 }

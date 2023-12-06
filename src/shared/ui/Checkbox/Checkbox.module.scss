@@ -38,3 +38,9 @@ label:has(input:checked) .check {
 .label {
     padding-left: 28px;
 }
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}

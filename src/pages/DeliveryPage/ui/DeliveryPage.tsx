@@ -6,7 +6,6 @@ export const DeliveryPage = () => (
     <>
         <TopBar title="Доставка" />
         <ContentLayout>
-
             <DeliveryMap />
         </ContentLayout>
     </>

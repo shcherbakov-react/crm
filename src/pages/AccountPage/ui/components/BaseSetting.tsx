@@ -1,11 +1,11 @@
-import cls from '../AccountPage.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Input } from 'shared/ui/Input/Input';
 import { Multiselect } from 'multiselect-react-dropdown';
 import { useState } from 'react';
 import { InputGroup } from 'shared/ui/InputGroup/InputGroup';
-import { ThemeSwitcher } from 'widgets/ThemeSwitcher/ui/ThemeSwitcher';
 import { Checkbox } from 'shared/ui/Checkbox/Checkbox';
+import { ThemeSwitcher } from 'widgets/ThemeSwitcher/ui/ThemeSwitcher';
+import cls from '../AccountPage.module.scss';
 
 export const BaseSetting = () => {
     const options = [
@@ -47,6 +47,7 @@ export const BaseSetting = () => {
                     />
                     <Input id="image" type="file" label="Логотип" />
                     {/*<Input id="color" type="file" label="Цвет" />*/}
+                    {/*<ThemeSwitcher />*/}
                     <ThemeSwitcher />
                 </InputGroup>
             </div>

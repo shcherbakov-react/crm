@@ -154,7 +154,7 @@ table.coverage td span.cline-any {
 .status-line {  height: 10px; }
 /* yellow */
 .cbranch-no { background: yellow !important; color: #111; }
-/* dark red */
+/* dark.scss red */
 .red.solid, .status-line.low, .low .cover-fill { background:#C21F39 }
 .low .chart { border:1px solid #C21F39 }
 .highlighted,
@@ -169,10 +169,10 @@ table.coverage td span.cline-any {
 .high, .cline-yes { background:rgb(230,245,208) }
 /* medium green */
 .cstat-yes { background:rgb(161,215,106) }
-/* dark green */
+/* dark.scss green */
 .status-line.high, .high .cover-fill { background:rgb(77,146,33) }
 .high .chart { border:1px solid rgb(77,146,33) }
-/* dark yellow (gold) */
+/* dark.scss yellow (gold) */
 .status-line.medium, .medium .cover-fill { background: #f9cd0b; }
 .medium .chart { border:1px solid #f9cd0b; }
 /* light yellow */

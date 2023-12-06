@@ -1,11 +1,12 @@
 @import 'reset';
-@import 'variables/global';
-@import 'leaflet/dist/leaflet.css';
-@import 'leaflet-draw/dist/leaflet.draw.css';
-@import 'themes/normal';
-@import 'themes/purple';
+@import 'app/styles/variables/global.scss';
+@import 'app/styles/themes/dark.scss';
+@import 'app/styles/themes/light.scss';
+@import 'app/styles/themes/purple.scss';
 @import 'map-leaflet';
 @import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css';
+@import 'leaflet/dist/leaflet.css';
+@import 'leaflet-draw/dist/leaflet.draw.css';
 @import url('https://unpkg.com/leaflet@1.3.3/dist/leaflet.css');
 
 
@@ -32,7 +33,7 @@
     display: grid;
     grid-template-rows: 56px 1fr;
     grid-template-columns: 1fr max-content;
-    background-color: var(--token-nelset-base-colors-primary-50);
+    background-color: var(--token-nelset-base-colors-white-0);
     width: 100%;
     padding-bottom: 30px;
 }
@@ -65,4 +66,16 @@
 
 .leaflet-bottom.leaflet-right {
     display: none;
+}
+
+.footer-btn {
+    width: calc(100%);
+    position: absolute;
+    top: 100%;
+    margin: 0 -24px -24px;
+    background-color: var(--token-nelset-base-colors-primary-50);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
 }

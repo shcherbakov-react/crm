@@ -1,5 +1,4 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
@@ -23,7 +22,13 @@ export const Navbar = ({ className }: NavbarProps) => {
                     <div className={cls.tariffDescr}>Осталось 11 дней</div>
                 </div>
                 <Link to="account/tariffs">
-                    <Button theme={ThemeButton.SM}>Выбрать тариф</Button>
+                    <Button theme={ThemeButton.SM}>
+                        Выбрать тариф
+                        <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L5 5L9 1" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+
+                    </Button>
                 </Link>
                 <div className={cls.notification}>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

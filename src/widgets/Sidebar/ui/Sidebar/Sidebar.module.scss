@@ -9,13 +9,23 @@
 }
 
 .logo {
-    display: grid;
+    display: flex;
+    gap: 20px;
+    align-items: center;
     justify-content: center;
+    height: 50px;
     margin: 10px 0 32px;
+}
+
+.iconHide {
+    cursor: pointer;
 }
 
 .collapsed {
     width: var(--sidebar-width-collapsed);
+    & .logoWrap {
+        display: none;
+    }
 }
 
 .switchers {
@@ -33,10 +43,12 @@
 .menuList {
     overflow-y: auto;
     max-height: calc(100vh - 168px);
+    overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
     width: 4px;
+    cursor: pointer;
 }
 
 ::-webkit-scrollbar-track {

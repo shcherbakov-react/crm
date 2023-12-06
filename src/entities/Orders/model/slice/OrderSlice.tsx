@@ -96,7 +96,7 @@ export const OrdersListData: OrderSchema[] = [
 export const columnHelper = createColumnHelper<OrderSchema>();
 export const OrdersListColumns = [
     columnHelper.accessor('id', {
-        header: () => '#',
+        header: () => <Checkbox id="selectAll" />,
         cell: (info) => <Checkbox id={info.getValue()} />,
     }),
     columnHelper.accessor((row) => row.outlet, {
@@ -116,8 +116,7 @@ export const OrdersListColumns = [
     }),
     columnHelper.accessor('date', {
         header: () => 'Оформлен',
-        cell: (info) =>
-            moment(info.renderValue()).lang('ru').format('DD MMMM - HH.mm'),
+        cell: (info) => moment(info.renderValue()).lang('ru').format('DD MMMM - HH.mm'),
     }),
     columnHelper.accessor('deliveryTime', {
         header: () => 'Доставлен до',

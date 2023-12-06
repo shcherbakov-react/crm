@@ -25,9 +25,7 @@ export const OrdersPage = () => {
         <>
             <TopBar title="Заказы" items={items} />
             <div className="content">
-                <FormProvider {...formMethods}>
-                    <OrdersList />
-                </FormProvider>
+                <OrdersList />
             </div>
         </>
     );

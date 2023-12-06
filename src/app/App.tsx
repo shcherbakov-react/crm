@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect } from 'react';
+import React, { Suspense, useEffect, useReducer } from 'react';
 import './styles/index.scss';
 import { AppRouter } from 'app/providers/router';
 import { Navbar } from 'widgets/Navbar';
@@ -6,13 +6,14 @@ import { Sidebar } from 'widgets/Sidebar';
 import { useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { userActions } from 'entities/User';
-import { useTheme } from 'shared/lib/hooks/useTheme/useTheme';
 import { classNames } from 'shared/lib/classNames/classNames';
+import useTheme from 'shared/lib/hooks/useTheme';
+import { Loader } from 'shared/ui/Loader/Loader';
+import { useThemeContext } from 'app/providers/ThemeProvider/ThemeProvider';
 
 function App() {
     const location = useLocation();
     const dispatch = useDispatch();
-    const { theme } = useTheme();
     useEffect(() => {
         dispatch(userActions.initAuthData());
     }, [dispatch]);
@@ -21,10 +22,12 @@ function App() {
         return !['/login', '/signup'].includes(pathname);
     };
 
+    const { theme } = useThemeContext();
+
     if (shouldShowSidebar()) {
         return (
             <div className={classNames('app', {}, [theme])}>
-                <Suspense fallback="">
+                <Suspense fallback={<Loader />}>
                     <Sidebar />
                     <div className="content-page">
                         <Navbar />
@@ -37,7 +40,7 @@ function App() {
 
     return (
         <div className={classNames('app app--clear', {}, [theme])}>
-            <Suspense fallback="">
+            <Suspense fallback={<Loader />}>
                 <div className="content-page--clear">
                     <AppRouter />
                 </div>

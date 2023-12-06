@@ -1,30 +1,25 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import Check from 'shared/assets/icons/check.svg';
 import { InputHTMLAttributes } from 'react';
-import { useFormContext } from 'react-hook-form';
+import { useForm, useFormContext } from 'react-hook-form';
 import cls from './Checkbox.module.scss';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>,
-    'value' | 'onChange' | 'readOnly'>;
+type HTMLInputProps = Omit<
+    InputHTMLAttributes<HTMLInputElement>,
+    'value' | 'onChange' | 'readOnly'
+>;
 
 interface InputProps extends HTMLInputProps {
     className?: string;
-    label?: string
+    label?: string;
     id: string;
-    selectAll?: boolean
+    allSelected?: (event: unknown) => void;
 }
 
 export const Checkbox = (props: InputProps) => {
-    const {
-        className,
-        id,
-        label,
-        placeholder,
-        selectAll,
-        ...other
-    } = props;
-
+    const { className, id, label, allSelected, placeholder, ...other } = props;
     const { register } = useFormContext();
+
     return (
         <div className={cls.wrapper}>
             <label htmlFor={id}>
@@ -38,6 +33,7 @@ export const Checkbox = (props: InputProps) => {
                 <span className={cls.input} />
                 <Check className={cls.check} />
             </label>
+            {label && <div>{label}</div>}
         </div>
     );
 };

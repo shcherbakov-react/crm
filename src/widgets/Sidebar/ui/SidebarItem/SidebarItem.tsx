@@ -5,16 +5,16 @@ import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { Icon } from 'shared/ui/Icon';
 import { SidebarItemType } from '../../model/types/sidebar';
 import cls from './SidebarItem.module.scss';
-import Arrow from 'shared/assets/icons/arrow.svg'
+import Arrow from 'shared/assets/icons/arrow.svg';
 
 interface SidebarItemProps {
-    item: SidebarItemType
-    collapsed: boolean
+    item: SidebarItemType;
+    collapsed: boolean;
 }
 
 export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
     const { t } = useTranslation();
-    const [isOpen, setIsOpen] = useState(item.isOpen)
+    const [isOpen, setIsOpen] = useState(item.isOpen);
 
     if (item?.path !== undefined) {
         return (
@@ -29,30 +29,32 @@ export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
                 {item.Icon && <Icon Svg={item.Icon} />}
                 <span className={cls.link}>{t(item.text)}</span>
             </AppLink>
-        )
+        );
     }
 
     return (
         <>
             <div
-                className={classNames(cls.item,
-                    {
-                        [cls.collapsed]:
-                        collapsed,
-                    })}>
+                className={classNames(cls.item, {
+                    [cls.collapsed]: collapsed,
+                })}
+            >
                 <div
                     className={cls.nestedTitle}
-                    onClick={() => setIsOpen(!isOpen)}>
+                    onClick={() => setIsOpen(!isOpen)}
+                >
                     {item.Icon && <Icon Svg={item.Icon} />}
                     <span className={cls.link}>{t(item.text)}</span>
                     <span className={cls.arrow}>
-                            <Arrow />
-                        </span>
+                        <Arrow />
+                    </span>
                 </div>
             </div>
-            <ul className={classNames(cls.nestedList, {
-                [cls.nestedListCollapse]: isOpen,
-            })}>
+            <ul
+                className={classNames(cls.nestedList, {
+                    [cls.nestedListCollapse]: isOpen,
+                })}
+            >
                 {item?.nested?.map((nested) => (
                     <AppLink
                         activeClassName={cls.active}
@@ -68,5 +70,5 @@ export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
                 ))}
             </ul>
         </>
-    )
+    );
 });

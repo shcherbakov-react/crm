@@ -1,6 +1,8 @@
 .Button {
     cursor: pointer;
-    //color: var(--primary-color);
+    display: flex;
+    gap: 8px;
+    align-items: center;
 }
 
 .clear {
@@ -27,7 +29,7 @@
 }
 
 .add {
-    color: var(--grey);
+    color: var(--token-nelset-base-colors-primary-500);
     font-size: 12px;
     font-weight: 500;
     display: flex;

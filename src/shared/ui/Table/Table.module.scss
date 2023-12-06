@@ -1,12 +1,16 @@
 .table {
     border-spacing: unset;
     width: max-content;
+    min-width: 100%;
     padding: 12px 24px;
     background-color: var(--token-nelset-base-colors-white-0);
 }
 
-.table > :not(caption) > * > * {
-    //border-bottom: 1px solid #eaecf0;
+.tableWrapper {
+    overflow: auto;
+    &::-webkit-scrollbar {
+        height: 4px;
+    }
 }
 
 .header th {
@@ -50,4 +54,8 @@ thead {
 tbody td {
     border-bottom: 1px solid #EAE9EA;
     background-color: var(--token-nelset-base-colors-white-0);
+}
+
+tr:hover td {
+    background-color: var(--token-nelset-base-colors-primary-50);
 }

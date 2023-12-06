@@ -1,6 +1,7 @@
-import cls from './Input.module.scss'
+import cls from './Input.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { forwardRef, InputHTMLAttributes } from 'react';
+import { useFormContext } from 'react-hook-form';
 
 type HTMLInputProps = Omit<
     InputHTMLAttributes<HTMLInputElement>,
@@ -8,28 +9,28 @@ type HTMLInputProps = Omit<
 >;
 
 interface InputProps extends HTMLInputProps {
-    className?: string
-    id?: string
-    type?: string
-    width?: SizeInput
-    value?: string | number
-    placeholder?: string
-    label?: string
-    onChange?: (value: string) => void
-    required?: boolean
+    className?: string;
+    id?: string;
+    type?: string;
+    width?: SizeInput;
+    value?: string | number;
+    placeholder?: string;
+    label?: string;
+    onChange?: (value: string) => void;
+    required?: boolean;
 }
 
 export enum SizeInput {
-    "SM" = 'small',
-    "MD" = 'medium',
-    "LG" = 'large'
+    'SM' = 'small',
+    'MD' = 'medium',
+    'LG' = 'large',
 }
 
 export enum TypeInput {
-    "PASSWORD" = 'password',
-    "TEXT" = 'text',
-    "FILE" = 'file',
-    "NUMBER" = 'number'
+    'PASSWORD' = 'password',
+    'TEXT' = 'text',
+    'FILE' = 'file',
+    'NUMBER' = 'number',
 }
 
 export const Input = (props: InputProps) => {
@@ -45,18 +46,23 @@ export const Input = (props: InputProps) => {
         ...other
     } = props;
 
-    const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-        onChange?.(e.target.value);
-    };
-
+    const { register } = useFormContext();
     return (
         <>
-            <div className={classNames(cls.wrapper, { [cls[width]]: true }, [])}>
-                <input value={value} onChange={onChangeHandler} type={type} autoComplete="new-password" {...other}
-                       placeholder={placeholder}
-                       className={classNames(cls.input, { [cls[type]]: true }, [])} />
+            <div
+                className={classNames(cls.wrapper, { [cls[width]]: true }, [])}
+            >
+                <input
+                    {...register(id)}
+                    value={value}
+                    type={type}
+                    autoComplete="new-password"
+                    {...other}
+                    placeholder={placeholder}
+                    className={classNames(cls.input, { [cls[type]]: true }, [])}
+                />
                 <label htmlFor={id}>{label}</label>
             </div>
         </>
-    )
-}
+    );
+};

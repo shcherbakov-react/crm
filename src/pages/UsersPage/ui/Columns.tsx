@@ -1,11 +1,8 @@
-import { Input } from 'shared/ui/Input/Input';
-import { OutletTitle } from 'shared/ui/OutletTitle/OutletTitle';
 import { createColumnHelper } from '@tanstack/react-table';
 import moment from 'moment';
 import { RoleValue } from 'pages/UsersPage/ui/components/RoleValue';
 import { StatusValue } from 'pages/UsersPage/ui/components/StatusValue';
 import { Checkbox } from 'shared/ui/Checkbox/Checkbox';
-import { useState } from 'react';
 import {
     getPosition,
     getRole,
@@ -47,9 +44,10 @@ export const defaultDataUsers: Users[] = [
 ];
 
 export const columnHelper = createColumnHelper<Users>();
+
 export const columns = [
     columnHelper.accessor('login', {
-        header: (val) => <Checkbox id={'selectAll'} />,
+        header: ({ table }) => <Checkbox allSelected={table.getToggleAllRowsSelectedHandler()} id="selectAll" />,
         cell: (val) => <Checkbox id={val.renderValue()} />,
     }),
 

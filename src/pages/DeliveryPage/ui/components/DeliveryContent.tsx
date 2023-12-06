@@ -13,6 +13,7 @@ interface panToProps {
 interface DeliveryContentProps {
     collapse: boolean;
 }
+
 export const DeliveryContent = (props: DeliveryContentProps) => {
     const [iconSize, setIconSize] = useState({ width: 22, height: 40 });
     const map = useMap();

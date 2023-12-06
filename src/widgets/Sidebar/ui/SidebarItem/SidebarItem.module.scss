@@ -26,13 +26,19 @@
 }
 
 .collapsed {
-    padding: 0 8px;
+    height: 37px;
 
     .link {
         opacity: 0;
         width: 0;
         margin: 0;
         font-size: var(--BodyMd);
+    }
+}
+
+.nestedListCollapse {
+    & .itemNested {
+        padding: 0 16px;
     }
 }
 

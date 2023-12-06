@@ -1,18 +1,15 @@
 interface RoleValueProps {
     className?: string;
-    data: string[]
+    data: string[];
 }
 
 export const RoleValue = (props: RoleValueProps) => {
-    const {
-        className,
-        data
-    } = props;
+    const { className, data } = props;
     return (
         <ul>
             {data.map((item) => (
-                <li>{item}</li>
+                <li key={item}>{item}</li>
             ))}
         </ul>
-    )
-}
+    );
+};

@@ -6,11 +6,11 @@ import cls from './TariffsPage.module.scss';
 
 export const TariffsPage = () => {
     return (
-        <div className={classNames(cls.tariffsPage, {}, [])}>
+        <>
             <TopBar title="Тарифы" />
             <ContentLayout>
                 <Tariffs />
             </ContentLayout>
-        </div>
+        </>
     );
 };
