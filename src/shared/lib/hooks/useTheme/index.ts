@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 
-export type Theme = 'light' | 'dark' | 'purple';
+export type Theme = 'light' | 'dark' | 'purple'| 'blue';
 
-const themes: Theme[] = ['light', 'dark', 'purple'];
+const themes: Theme[] = ['light', 'dark', 'purple', 'blue'];
 
 const useTheme = () => {
     const storedTheme = localStorage.getItem('theme') as Theme | null;

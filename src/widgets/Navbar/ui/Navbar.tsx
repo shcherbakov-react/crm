@@ -22,7 +22,7 @@ export const Navbar = ({ className }: NavbarProps) => {
                     <div className={cls.tariffDescr}>Осталось 11 дней</div>
                 </div>
                 <Link to="account/tariffs">
-                    <Button theme={ThemeButton.SM}>
+                    <Button className={cls.btnTheme} theme={ThemeButton.SM}>
                         Выбрать тариф
                         <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1 1L5 5L9 1" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

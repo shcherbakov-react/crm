@@ -2,32 +2,36 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useState } from 'react';
 import { useThemeContext } from 'app/providers/ThemeProvider/ThemeProvider';
 import cls from './ThemeSwitcher.module.scss';
+import { LOCAL_STORAGE_THEME_KEY } from 'shared/const/localstorage';
 
 export const ThemeSwitcher = () => {
     const [isActive, setIsActive] = useState<boolean>(false);
+    console.log(isActive);
     const { toggleTheme } = useThemeContext();
     const colors = [
         {
             name: 'light',
-            ruName: 'Светлая',
+            ruName: 'Светлый',
             color: '#fff',
-            active: false,
         },
         {
             name: 'dark',
-            ruName: 'Темная',
+            ruName: 'Темный',
             color: '#000000',
-            active: false,
         },
         {
             name: 'purple',
-            ruName: 'Фиолетовая',
+            ruName: 'Фиолетовый',
             color: '#7F56D9',
-            active: true,
+        },
+        {
+            name: 'blue',
+            ruName: 'Синий',
+            color: '#677bab',
         },
     ];
-
-    const activeElem = colors.find((item) => item.active === true);
+    const activeThemeName = localStorage.getItem(LOCAL_STORAGE_THEME_KEY);
+    const activeElem = colors.filter((item) => activeThemeName === item.name);
     const handleThemeChange = (selectedTheme: string) => {
         toggleTheme(selectedTheme as any); // TypeScript issue, need to cast to 'any'
     };
@@ -38,10 +42,10 @@ export const ThemeSwitcher = () => {
                 onClick={() => setIsActive(!isActive)}
             >
                 <div
-                    style={{ backgroundColor: `${activeElem.color}` }}
+                    style={{ backgroundColor: `${activeElem[0].color}` }}
                     className={cls.iconColor}
                 />
-                <div className={cls.themeNameRu}>{activeElem.ruName}</div>
+                <div className={cls.themeNameRu}>{activeElem[0].ruName}</div>
                 <div className={cls.themeLabel}>Цвет интерфейса</div>
             </div>
             <div
@@ -51,9 +55,9 @@ export const ThemeSwitcher = () => {
                     [],
                 )}
             >
-                {colors.map((item) => (
+                {colors.map((item, index) => (
                     <div
-                        key={item.color}
+                        key={item.color + index}
                         style={{ background: `${item.color}` }}
                         className={classNames(
                             cls.themeItem,
