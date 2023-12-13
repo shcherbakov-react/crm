@@ -1,9 +1,8 @@
-import cls from './ManualsPage.module.scss'
+import cls from './ManualsPage.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { TopBar } from 'widgets/TopBar/ui/TopBar';
 
 export const ManualsPage = () => {
-
     return (
         <>
             <TopBar title={'Справочники'} />
@@ -11,5 +10,5 @@ export const ManualsPage = () => {
                 manuals
             </div>
         </>
-    )
-}
+    );
+};

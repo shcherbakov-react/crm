@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useReducer } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import './styles/index.scss';
 import { AppRouter } from 'app/providers/router';
 import { Navbar } from 'widgets/Navbar';
@@ -7,13 +7,13 @@ import { useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { userActions } from 'entities/User';
 import { classNames } from 'shared/lib/classNames/classNames';
-import useTheme from 'shared/lib/hooks/useTheme';
 import { Loader } from 'shared/ui/Loader/Loader';
 import { useThemeContext } from 'app/providers/ThemeProvider/ThemeProvider';
 
 function App() {
     const location = useLocation();
     const dispatch = useDispatch();
+
     useEffect(() => {
         dispatch(userActions.initAuthData());
     }, [dispatch]);

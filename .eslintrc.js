@@ -37,12 +37,10 @@ module.exports = {
         'i18next/no-literal-string': 0,
         'max-len': ['error', {
             ignoreComments: true,
-            code: 300,
+            code: 150,
+            ignorePattern: 'd="([\\s\\S]*?)"',
         }],
     },
-    // globals: {
-    //     __IS_DEV__: true,
-    // },
     overrides: [{
         files: ['**/src/**/*.test.{ts,tsx}'],
         rules: {

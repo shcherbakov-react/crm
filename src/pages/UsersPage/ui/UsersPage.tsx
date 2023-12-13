@@ -1,6 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import {
-    flexRender,
     getCoreRowModel,
     useReactTable,
 } from '@tanstack/react-table';

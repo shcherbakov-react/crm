@@ -12,7 +12,7 @@ export const MarketingPage = (props: MarketingProps) => {
 
     return (
         <>
-            <TopBar title={'Маркетинг'} />
+            <TopBar title="Маркетинг" />
             <ContentLayout>
                 <div className={classNames(cls.marketing, {}, [className])}>
                     Marketing

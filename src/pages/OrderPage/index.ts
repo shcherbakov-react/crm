@@ -1,3 +1,3 @@
-import {OrderPage} from "./ui/OrderPage";
+import { OrderPage } from './ui/OrderPage';
 
-export {OrderPage}
+export { OrderPage };

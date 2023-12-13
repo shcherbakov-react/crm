@@ -4,6 +4,10 @@ import { UserSchema, User } from '../types/user';
 
 const initialState: UserSchema = {
     _inited: false,
+    authData: {
+        id: '',
+        username: '',
+    },
 };
 
 export const userSlice = createSlice({
@@ -27,6 +31,5 @@ export const userSlice = createSlice({
     },
 });
 
-// Action creators are generated for each case reducer function
 export const { actions: userActions } = userSlice;
 export const { reducer: userReducer } = userSlice;

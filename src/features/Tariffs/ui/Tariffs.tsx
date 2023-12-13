@@ -30,28 +30,28 @@ export const Tariffs = () => {
                             <ul className={cls.tariffUl}>
                                 <li className={cls.tariffLi}>
                                     <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M0.999999 4.18182L3.30361 7.11368C3.67401 7.5851 4.3731 7.6269 4.79703 7.20297L11 1" stroke="#5F586A" stroke-width="2" stroke-linecap="round"/>
+                                        <path d="M0.999999 4.18182L3.30361 7.11368C3.67401 7.5851 4.3731 7.6269 4.79703 7.20297L11 1" stroke="#5F586A" strokeWidth="2" strokeLinecap="round"/>
                                     </svg>
 
                                     Персонал и учет смен
                                 </li>
                                 <li className={cls.tariffLi}>
                                     <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M0.999999 4.18182L3.30361 7.11368C3.67401 7.5851 4.3731 7.6269 4.79703 7.20297L11 1" stroke="#5F586A" stroke-width="2" stroke-linecap="round"/>
+                                        <path d="M0.999999 4.18182L3.30361 7.11368C3.67401 7.5851 4.3731 7.6269 4.79703 7.20297L11 1" stroke="#5F586A" strokeWidth="2" strokeLinecap="round"/>
                                     </svg>
 
                                     Склад и остатки
                                 </li>
                                 <li className={cls.tariffLi}>
                                     <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M0.999999 4.18182L3.30361 7.11368C3.67401 7.5851 4.3731 7.6269 4.79703 7.20297L11 1" stroke="#5F586A" stroke-width="2" stroke-linecap="round"/>
+                                        <path d="M0.999999 4.18182L3.30361 7.11368C3.67401 7.5851 4.3731 7.6269 4.79703 7.20297L11 1" stroke="#5F586A" strokeWidth="2" strokeLinecap="round"/>
                                     </svg>
 
                                     Заказы
                                 </li>
                                 <li className={cls.tariffLi}>
                                     <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M0.999999 4.18182L3.30361 7.11368C3.67401 7.5851 4.3731 7.6269 4.79703 7.20297L11 1" stroke="#5F586A" stroke-width="2" stroke-linecap="round"/>
+                                        <path d="M0.999999 4.18182L3.30361 7.11368C3.67401 7.5851 4.3731 7.6269 4.79703 7.20297L11 1" stroke="#5F586A" strokeWidth="2" strokeLinecap="round"/>
                                     </svg>
                                     Управление доставкой
                                 </li>

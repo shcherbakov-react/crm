@@ -1,5 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useState } from 'react';
+import { memo, useState } from 'react';
 import { SidebarItem } from 'widgets/Sidebar/ui/SidebarItem/SidebarItem';
 import Logo from 'shared/assets/icons/logo-dark.svg';
 import Icon from 'shared/assets/icons/sidebar.svg';
@@ -12,7 +12,7 @@ interface SidebarProps {
 
 const sidebarItemsList = useSidebarItems();
 
-export const Sidebar = ({ className }: SidebarProps) => {
+export const Sidebar = memo(({ className }: SidebarProps) => {
     const [collapsed, setCollapsed] = useState(false);
 
     return (
@@ -44,4 +44,4 @@ export const Sidebar = ({ className }: SidebarProps) => {
             </div>
         </div>
     );
-};
+});

@@ -8,9 +8,7 @@ export const OrderPage = () => {
     return (
         <>
             <TopBar title={`Заказ: ${id}`} />
-            <ContentLayout>
-                {/*<Order />*/}
-            </ContentLayout>
+            <ContentLayout>{/*<Order />*/}</ContentLayout>
         </>
     );
 };

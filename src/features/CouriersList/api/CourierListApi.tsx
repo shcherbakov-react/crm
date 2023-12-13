@@ -8,14 +8,14 @@ const CourierListApi = [
     },
     {
         id: 'we124',
-        name: 'Александров И. ',
+        name: 'Александров И.',
         status: 1,
         worksUpTo: 2000,
         position: ['45.42343', '55.12332'],
     },
     {
         id: 'we125',
-        name: 'Апраксин Ф. ',
+        name: 'Апраксин Ф.',
         status: 2,
         worksUpTo: 1800,
         position: ['45.42343', '55.12332'],

@@ -1,4 +1,4 @@
-import { CourierListApi } from 'features/CouriersList/api/CourierListApi';
+import { CourierListApi, ICourierList } from 'features/CouriersList/api/CourierListApi';
 import React, { useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './CourierList.module.scss';
@@ -43,15 +43,15 @@ export const CourierList: React.FC<CourierListProps> = ({ panTo }) => {
                     [],
                 )}
             >
-                {CourierListApi.map((item) => (
+                {CourierListApi.map((item: ICourierList) => (
                     <div className={cls.courierItem} key={item.id}>
                         <div>{item.name}</div>
                         <div>{item.status}</div>
                         <div>
                             Работает до
-                            {item.worksUpTo}
+                            {` ${item.worksUpTo}`}
                         </div>
-                        <div onClick={() => panTo(item.position)}>
+                        <div className={cls.position} onClick={() => panTo(item.position)}>
                             <svg
                                 width="20"
                                 height="20"

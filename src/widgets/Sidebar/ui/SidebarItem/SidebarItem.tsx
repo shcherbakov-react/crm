@@ -3,9 +3,9 @@ import { memo, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { Icon } from 'shared/ui/Icon';
+import Arrow from 'shared/assets/icons/arrow.svg';
 import { SidebarItemType } from '../../model/types/sidebar';
 import cls from './SidebarItem.module.scss';
-import Arrow from 'shared/assets/icons/arrow.svg';
 
 interface SidebarItemProps {
     item: SidebarItemType;
@@ -19,7 +19,7 @@ export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
     if (item?.path !== undefined) {
         return (
             <AppLink
-                data-testid={'sidebar-toggle'}
+                data-testid="sidebar-toggle"
                 to={item.path}
                 activeClassName={cls.active}
                 className={classNames(cls.item, {

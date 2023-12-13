@@ -44,7 +44,7 @@ export const ClientsListColumns = [
     }),
     columnHelper.accessor('id', {
         header: () => 'ID',
-        cell: (info) => <div style={{minWidth: '100px'}}>{info.getValue()}</div>,
+        cell: (info) => <div style={{ minWidth: '100px' }}>{info.getValue()}</div>,
     }),
     columnHelper.accessor('initials', {
         header: () => 'ФИО',
